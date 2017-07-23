@@ -8,8 +8,6 @@
  '(ansi-color-names-vector
    ["#2e3436" "#a40000" "#4e9a06" "#c4a000" "#204a87" "#5c3566" "#729fcf" "#eeeeec"])
  '(custom-enabled-themes (quote (manoj-dark)))
- '(ido-enable-flex-matching t)
- '(ido-mode (quote both) nil (ido))
  '(org-babel-load-languages
    (quote
     ((python . t)

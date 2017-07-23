@@ -60,3 +60,10 @@
 (use-package yaml-mode)
 
 ;(provide 'install-packages)
+(use-package ido
+  :init (ido-mode 'both)
+  :config (setq
+	   ido-enable-flex-matching t
+	   ido-use-filename-at-point 'guess
+	   ido-use-url-at-point t))
+
