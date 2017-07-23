@@ -48,6 +48,19 @@
 (use-package midnight
   :config (midnight-mode t))
 
+(use-package org
+  :config (progn
+	    (org-babel-do-load-languages
+	     'org-babel-load-languages
+	     '((C . t)
+	       (python . t)
+	       (js . t)
+	       (emacs-lisp . t)
+	       (sh . t)
+	       (scheme . t)
+	       (lisp . t)))
+	    (setq org-confirm-babel-evaluate nil)))
+
 (use-package re-builder
   :bind (("C-c R" . re-builder))
   :config (setq reb-re-syntax 'string))

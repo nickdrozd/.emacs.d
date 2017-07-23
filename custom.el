@@ -8,13 +8,9 @@
  '(ansi-color-names-vector
    ["#2e3436" "#a40000" "#4e9a06" "#c4a000" "#204a87" "#5c3566" "#729fcf" "#eeeeec"])
  '(custom-enabled-themes (quote (manoj-dark)))
- '(org-babel-load-languages
+ '(package-selected-packages
    (quote
-    ((python . t)
-     (scheme . t)
-     (C . t)
-     (js . t)
-     (emacs-lisp . t)))))
+    (systemd whole-line-or-region while-line-or-region dired-x protobuf-mode slime yaml-mode use-package smex magit flycheck exec-path-from-shell elpy))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
