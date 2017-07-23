@@ -67,3 +67,7 @@
 	   ido-use-filename-at-point 'guess
 	   ido-use-url-at-point t))
 
+(use-package slime
+  :config (setq inferior-lisp-program "sbcl")
+  :defer (slime))
+
