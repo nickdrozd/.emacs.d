@@ -61,3 +61,5 @@
 
 (add-hook 'window-setup-hook 'open-4-windows)
 
+
+(setq tab-always-indent 'complete)
