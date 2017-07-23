@@ -7,7 +7,6 @@
 
 (set-frame-parameter nil 'fullscreen 'maximized)
 
-
 (defun emacs-file (file)
   (expand-file-name file user-emacs-directory))
 
@@ -48,3 +47,5 @@
 
 ;; good idea?
 ;; (add-hook 'focus-out-hook #'garbage-collect)
+
+(add-hook 'before-save-hook 'delete-trailing-whitespace)

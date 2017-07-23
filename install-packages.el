@@ -26,7 +26,7 @@
    (lambda ()
      (define-key dired-mode-map "3" 'dired-up-directory)
      (define-key dired-mode-map ";" 'dired-up-directory))))
-  
+
 (use-package elpy)
 
 (use-package exec-path-from-shell
