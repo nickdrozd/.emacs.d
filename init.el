@@ -50,3 +50,14 @@
 ;; (add-hook 'focus-out-hook #'garbage-collect)
 
 (add-hook 'before-save-hook 'delete-trailing-whitespace)
+
+
+(defun open-4-windows ()
+  (interactive)
+  (delete-other-windows)
+  (while (< (count-windows) 4)
+    (split-window-right))
+  (balance-windows))
+
+(add-hook 'window-setup-hook 'open-4-windows)
+
