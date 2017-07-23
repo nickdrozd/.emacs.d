@@ -30,6 +30,7 @@
 
 (defvar emacs.d-files
   '("keys.el"
+    "global.el"
     "custom.el"
     "packages.el"))
 
@@ -39,33 +40,9 @@
 
 (setq custom-file (emacs-file "custom.el"))
 
-(setq column-number-mode t)
-(setq completions-format 'vertical)
-
-;; makes windows always open vertically
-(setq split-height-threshold nil)
-
-(put 'upcase-region 'disabled nil)
-
 (defalias 'qrr 'query-replace-regexp)
 (defalias 'sh 'shell)
 
-(setq uniquify-buffer-name-style 'forward)
-
-(show-paren-mode 1)
-
-(setq inhibit-startup-message t)
-(tool-bar-mode 0)
-
-;; Is there a way to get rid of that ugly line number stripe?
-;; (global-linum-mode t)
-
-(display-time-mode 0)
-
-;; good idea?
-;; (add-hook 'focus-out-hook #'garbage-collect)
-
-(add-hook 'before-save-hook 'delete-trailing-whitespace)
 
 
 (defun open-4-windows ()
@@ -77,7 +54,5 @@
 
 (add-hook 'window-setup-hook 'open-4-windows)
 
-
-(setq tab-always-indent 'complete)
 
 (add-to-list 'same-window-buffer-names "*shell*")
