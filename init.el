@@ -56,4 +56,6 @@
 (add-hook 'window-setup-hook 'open-4-windows)
 
 
-(add-to-list 'same-window-buffer-names "*shell*")
+(add-to-list 'same-window-regexps
+	     "*magit:.+"
+	     "*shell*.+")
