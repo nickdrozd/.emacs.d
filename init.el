@@ -31,7 +31,7 @@
 (defvar emacs.d-files
   '("keys.el"
     "custom.el"
-    "install-packages.el"))
+    "packages.el"))
 
 ;; load everything up
 (dolist (file emacs.d-files)
