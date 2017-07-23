@@ -7,10 +7,7 @@
    [default default default italic underline success warning error])
  '(ansi-color-names-vector
    ["#2e3436" "#a40000" "#4e9a06" "#c4a000" "#204a87" "#5c3566" "#729fcf" "#eeeeec"])
- '(custom-enabled-themes (quote (manoj-dark)))
- '(package-selected-packages
-   (quote
-    (systemd whole-line-or-region while-line-or-region dired-x protobuf-mode slime yaml-mode use-package smex magit flycheck exec-path-from-shell elpy))))
+ '(custom-enabled-themes (quote (manoj-dark))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
