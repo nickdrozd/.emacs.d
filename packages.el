@@ -71,6 +71,12 @@
   :bind (("M-x" . smex))
   :config (smex-initialize))
 
+(use-package which-key
+  :ensure t
+  :config (progn
+	    (which-key-mode)
+	    (setq which-key-idle-delay 2.0))
+
 (use-package yaml-mode)
 
 ;(provide 'install-packages)
