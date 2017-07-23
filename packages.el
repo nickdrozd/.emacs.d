@@ -1,3 +1,8 @@
+(use-package avy
+  :ensure t
+  :bind (("M-g M-g" . avy-goto-line)
+	 ("M-g a" . avy-goto-char-timer)))
+
 (use-package conf-mode
   :config (add-hook 'conf-mode-hook
                     (lambda () (setq tab-width 4))))
