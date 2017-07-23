@@ -39,7 +39,6 @@
 (show-paren-mode 1)
 
 (setq inhibit-startup-message t)
-(menu-bar-mode 0)
 (tool-bar-mode 0)
 
 ;; Is there a way to get rid of that ugly line number stripe?
