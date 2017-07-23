@@ -63,3 +63,5 @@
 
 
 (setq tab-always-indent 'complete)
+
+(add-to-list 'same-window-buffer-names "*shell*")
