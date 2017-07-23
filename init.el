@@ -5,7 +5,9 @@
   (setq mac-command-modifier 'control)
   (setq mac-control-modifier 'super))
 
-(set-frame-parameter nil 'fullscreen 'maximized)
+(add-to-list 'initial-frame-alist '(fullscreen . maximized))
+
+;(set-frame-parameter nil 'fullscreen 'maximized)
 
 (defun emacs-file (file)
   (expand-file-name file user-emacs-directory))
