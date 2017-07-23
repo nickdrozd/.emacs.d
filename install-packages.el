@@ -71,3 +71,6 @@
   :config (setq inferior-lisp-program "sbcl")
   :defer (slime))
 
+(use-package python
+  :config (setq python-shell-interpreter "python3"))
+
