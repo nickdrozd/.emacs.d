@@ -41,7 +41,7 @@
 
 (use-package magit
   :ensure t
-  :bind (("C-c g" . magit-status))
+  :bind (("C-x g" . magit-status))
   :config (setq magit-commit-arguments '("--signoff")
                 magit-log-arguments '("--graph" "--color" "--decorate" "-n256")
                 magit-rebase-arguments '("--autosquash" "--autostash")))
