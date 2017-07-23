@@ -1,6 +1,32 @@
+(defmacro toggle-modes (flag &rest modes)
+  `(progn
+     ,@(mapcar (lambda (mode)
+		 `(,mode ,flag))
+	       modes)))
 
-(column-number-mode 1)
-;(setq column-number-mode t)
+(defmacro enable-modes (&rest modes)
+  `(toggle-modes 1 ,@modes))
+
+(defmacro disable-modes (&rest modes)
+  `(toggle-modes 0 ,@modes))
+
+(enable-modes
+ column-number-mode
+ show-paren-mode
+ )
+
+(disable-modes
+ tool-bar-mode
+
+ ;; Time might be nice, but other stuff is included in the default
+ display-time-mode
+
+ ;; Is there a way to get rid of that ugly line number stripe?
+ global-linum-mode
+ )
+
+;;;
+
 (setq completions-format 'vertical)
 
 ;; makes windows always open vertically
@@ -10,15 +36,7 @@
 
 (setq uniquify-buffer-name-style 'forward)
 
-(show-paren-mode 1)
-
 (setq inhibit-startup-message t)
-(tool-bar-mode 0)
-
-;; Is there a way to get rid of that ugly line number stripe?
-;; (global-linum-mode t)
-
-(display-time-mode 0)
 
 ;; good idea?
 ;; (add-hook 'focus-out-hook #'garbage-collect)
