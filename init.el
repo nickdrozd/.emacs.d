@@ -9,6 +9,22 @@
 
 ;(set-frame-parameter nil 'fullscreen 'maximized)
 
+;;;
+
+(require 'package)
+
+(add-to-list 'package-archives
+             '("melpa" . "https://stable.melpa.org/packages/")
+             t)
+
+(package-initialize)
+
+(unless (package-installed-p 'use-package)
+  (package-refresh-contents)
+  (package-install 'use-package))
+
+;;;
+
 (defun emacs-file (file)
   (expand-file-name file user-emacs-directory))
 
