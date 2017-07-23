@@ -39,6 +39,13 @@
   :ensure t
   :config (global-flycheck-mode))
 
+(use-package ido
+  :init (ido-mode 'both)
+  :config (setq
+	   ido-enable-flex-matching t
+	   ido-use-filename-at-point 'guess
+	   ido-use-url-at-point t))
+
 (use-package magit
   :ensure t
   :bind (("C-x g" . magit-status))
@@ -62,9 +69,16 @@
 	       (lisp . t)))
 	    (setq org-confirm-babel-evaluate nil)))
 
+(use-package python
+  :config (setq python-shell-interpreter "python3"))
+
 (use-package re-builder
   :bind (("C-c R" . re-builder))
   :config (setq reb-re-syntax 'string))
+
+(use-package slime
+  :config (setq inferior-lisp-program "sbcl")
+  :defer (slime))
 
 (use-package smex
   :ensure t
@@ -74,17 +88,3 @@
 (use-package yaml-mode)
 
 ;(provide 'install-packages)
-(use-package ido
-  :init (ido-mode 'both)
-  :config (setq
-	   ido-enable-flex-matching t
-	   ido-use-filename-at-point 'guess
-	   ido-use-url-at-point t))
-
-(use-package slime
-  :config (setq inferior-lisp-program "sbcl")
-  :defer (slime))
-
-(use-package python
-  :config (setq python-shell-interpreter "python3"))
-
