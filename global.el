@@ -13,6 +13,7 @@
 (enable-modes
  column-number-mode
  show-paren-mode
+ hl-line-mode
  )
 
 (disable-modes
