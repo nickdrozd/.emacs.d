@@ -27,20 +27,20 @@
 
 ;;;
 
-(setq completions-format 'vertical)
+(setq
+ completions-format 'vertical
+ tab-always-indent 'complete
 
-;; makes windows always open vertically
-(setq split-height-threshold nil)
+ ;; makes windows always open vertically
+ split-height-threshold nil
+
+ uniquify-buffer-name-style 'forward
+ inhibit-startup-message t
+ )
 
 (put 'upcase-region 'disabled nil)
-
-(setq uniquify-buffer-name-style 'forward)
-
-(setq inhibit-startup-message t)
 
 ;; good idea?
 ;; (add-hook 'focus-out-hook #'garbage-collect)
 
 (add-hook 'before-save-hook 'delete-trailing-whitespace)
-
-(setq tab-always-indent 'complete)
