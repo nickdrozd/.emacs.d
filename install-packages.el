@@ -25,9 +25,10 @@
    'dired-mode-hook
    (lambda ()
      (define-key dired-mode-map "3" 'dired-up-directory)
-     (define-key dired-mode-map ";" 'dired-up-directory))))
+     (define-key dired-mode-map ";" 'dired-up-directory)
+     (define-key dired-mode-map "`" 'dired-find-file))))
 
-(use-package elpy)
+(use-package dired-x)
 
 (use-package exec-path-from-shell
   :if (or *is-mac* *is-linux*)
