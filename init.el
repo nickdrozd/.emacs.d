@@ -2,8 +2,9 @@
 (defconst *is-linux* (eq system-type 'gnu/linux))
 
 (when *is-mac*
-  (setq mac-command-modifier 'control)
-  (setq mac-control-modifier 'super))
+  (setq
+   mac-command-modifier 'control
+   mac-control-modifier 'super)
 
 (add-to-list 'initial-frame-alist '(fullscreen . maximized))
 
