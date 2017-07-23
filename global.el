@@ -14,6 +14,11 @@
  column-number-mode
  show-paren-mode
  hl-line-mode
+
+ ;; assuming tooltips are sent to echo area
+ tooltip-mode
+
+ menu-bar-mode
  )
 
 (disable-modes
