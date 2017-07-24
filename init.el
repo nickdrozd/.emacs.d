@@ -4,7 +4,9 @@
 (when *is-mac*
   (setq
    mac-command-modifier 'control
-   mac-control-modifier 'super)
+   mac-option-modifier 'meta
+   mac-control-modifier 'super
+   mac-function-modifier 'hyper))
 
 (add-to-list 'initial-frame-alist '(fullscreen . maximized))
 
