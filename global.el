@@ -42,6 +42,7 @@
 
  uniquify-buffer-name-style 'forward
  inhibit-startup-message t
+ sentence-end-double-space nil
  )
 
 (put 'upcase-region 'disabled nil)
