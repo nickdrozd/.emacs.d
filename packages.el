@@ -47,17 +47,17 @@
   :config (midnight-mode t))
 
 (use-package org
-  :config (progn
-	    (org-babel-do-load-languages
-	     'org-babel-load-languages
-	     '((C . t)
-	       (python . t)
-	       (js . t)
-	       (emacs-lisp . t)
-	       (sh . t)
-	       (scheme . t)
-	       (lisp . t)))
-	    (setq org-confirm-babel-evaluate nil)))
+  :config
+  (org-babel-do-load-languages
+   'org-babel-load-languages
+   '((C . t)
+     (python . t)
+     (js . t)
+     (emacs-lisp . t)
+     (sh . t)
+     (scheme . t)
+     (lisp . t)))
+  (setq org-confirm-babel-evaluate nil))
 
 (use-package python
   :config (setq python-shell-interpreter "python3"))
@@ -77,9 +77,9 @@
 
 (use-package which-key
   :ensure t
-  :config (progn
-	    (which-key-mode)
-	    (setq which-key-idle-delay 2.0))
+  :config
+  (which-key-mode)
+  (setq which-key-idle-delay 2.0))
 
 (use-package yaml-mode)
 
