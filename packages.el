@@ -57,7 +57,8 @@
      (sh . t)
      (scheme . t)
      (lisp . t)))
-  (setq org-confirm-babel-evaluate nil))
+  (setq org-confirm-babel-evaluate nil)
+  (define-key org-mode-map (kbd "C-,") nil))
 
 (use-package python
   :config (setq python-shell-interpreter "python3"))
