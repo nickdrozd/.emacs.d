@@ -14,6 +14,7 @@
  column-number-mode
  show-paren-mode
  hl-line-mode
+ delete-selection-mode
 
  ;; assuming tooltips are sent to echo area
  tooltip-mode
