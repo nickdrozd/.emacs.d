@@ -46,7 +46,7 @@
      (global-set-key (kbd ,keyb) ',name)))
 
 
-(defbind "C-c s" save-and-kill-buffer ()
+(defbind "C-x s" save-and-kill-buffer ()
   (save-buffer)
   (kill-buffer))
 
