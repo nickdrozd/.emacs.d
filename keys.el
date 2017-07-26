@@ -51,8 +51,17 @@
   (kill-buffer))
 
 
-(defbind "C-c i" init-edit ()
-  (find-file user-init-file))
+
+
+(defmacro key-to-open-file (keyb file)
+  `(defbind ,keyb ,(make-symbol (concat "edit-conf-" file)) ()
+     (find-file (emacs-file ,file))))
+
+(key-to-open-file "H-i" "init.el")
+(key-to-open-file "H-k" "keys.el")
+(key-to-open-file "H-g" "global.el")
+(key-to-open-file "H-p" "packages.el")
+
 
 
 (provide 'keys)
