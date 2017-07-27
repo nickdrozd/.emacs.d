@@ -48,15 +48,18 @@
 
 (use-package org
   :config
-  (org-babel-do-load-languages
-   'org-babel-load-languages
-   '((C . t)
-     (python . t)
-     (js . t)
-     (emacs-lisp . t)
-     (sh . t)
-     (scheme . t)
-     (lisp . t)))
+  (if (fboundp 'org-babel-load-languages)
+      (org-babel-load-languages ; this uses a modification I made to org
+       '(C python js emacs-lisp sh scheme lisp))
+    (org-babel-do-load-languages ; this is how babel languages are normally set
+     'org-babel-load-languages
+     '((C . t)
+       (python . t)
+       (js . t)
+       (emacs-lisp . t)
+       (sh . t)
+       (scheme . t)
+       (lisp . t))))
   (setq org-confirm-babel-evaluate nil)
   (define-key org-mode-map (kbd "C-,") nil))
 
