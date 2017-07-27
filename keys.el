@@ -43,6 +43,7 @@
 (defkey C-w backward-kill-word)
 (defkey (C-x C-k) kill-region)
 
+(defkey s-k kill-this-buffer)
 
 (defmacro defbind (keyb name args &rest body)
   "Define a function and give it a keybinding."
