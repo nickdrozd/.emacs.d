@@ -13,7 +13,7 @@
 (enable-modes
  column-number-mode
  show-paren-mode
- hl-line-mode
+ global-hl-line-mode
  delete-selection-mode
  subword-mode
  global-prettify-symbols-mode
