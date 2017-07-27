@@ -16,6 +16,7 @@
  hl-line-mode
  delete-selection-mode
  subword-mode
+ global-prettify-symbols-mode
 
  ;; assuming tooltips are sent to echo area
  tooltip-mode
