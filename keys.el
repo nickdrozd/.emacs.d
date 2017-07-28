@@ -60,6 +60,8 @@
   (C-x C-k) kill-region
 
   s-k kill-this-buffer
+
+  H-s (switch-to-buffer "*scratch*")
   )
 
 
