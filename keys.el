@@ -17,33 +17,53 @@
 	   `(lambda () (interactive) ,func)
 	 `',func))))
 
-;; C-x C-s? yeah right
-(defkey M-s save-buffer)
+(defun break-args-into-pairs (args)
+  (let ((result nil))
+    (while (< 1 (length args))
+      (setq result (cons (list (car args) (cadr args)) result))
+      (setq args (cddr args)))
+    (nreverse result)))
 
-;; ibuffer is better than buffer-list
-(defkey (C-x C-b) ibuffer)
+(defmacro defkeys (&rest keys-and-funcs)
+  (let ((defkey-statements
+	  (mapcar (lambda (pair)
+		    (cons 'defkey pair))
+		  (break-args-into-pairs keys-and-funcs))))
+    `(progn ,@defkey-statements)))
 
-;; Make regexp search the default
-(defkey C-s isearch-forward-regexp)
-(defkey C-r isearch-backward-regexp)
-(defkey C-M-s isearch-forward)
-(defkey C-M-r isearch-backward)
 
-;; C-x o? please
-(defkey C-<right> other-window)
-(defkey C-<left> (other-window -1))
-(defkey C-. other-window)
-(defkey C-\, (other-window -1))
+(defkeys
+  ;; C-x C-s? yeah right
+  M-s save-buffer
 
-;; Alternative to M-x (sites.google.com/site/steveyegge2/effective-emacs)
-(defkey (C-c C-m) execute-extended-command)
+  ;; ibuffer is better than buffer-list
+  (C-x C-b) ibuffer
 
-(defkey (C-c q) query-replace-regexp)
+  ;; Make regexp search the default
+  C-s isearch-forward-regexp
+  C-r isearch-backward-regexp
+  C-M-s isearch-forward
+  C-M-r isearch-backward
 
-(defkey C-w backward-kill-word)
-(defkey (C-x C-k) kill-region)
+  ;; C-x o? please
+  C-<right> other-window
+  C-<left> (other-window -1)
+  C-. other-window
+  C-\, (other-window -1)
 
-(defkey s-k kill-this-buffer)
+  ;; Alternative to M-x (sites.google.com/site/steveyegge2/effective-emacs)
+  (C-c C-m) execute-extended-command
+
+  (C-c q) query-replace-regexp
+
+  C-w backward-kill-word
+  (C-x C-k) kill-region
+
+  s-k kill-this-buffer
+  )
+
+
+
 
 (defmacro defbind (keyb name args &rest body)
   "Define a function and give it a keybinding."
