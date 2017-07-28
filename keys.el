@@ -96,12 +96,22 @@
 
 (defmacro key-to-open-file (keyb file)
   `(defbind ,keyb ,(make-symbol (concat "edit-conf-" file)) ()
-     (find-file (emacs-file ,file))))
+     (find-file (emacs-file ,(concat file ".el")))))
 
-(key-to-open-file H-i "init.el")
-(key-to-open-file H-k "keys.el")
-(key-to-open-file H-g "global.el")
-(key-to-open-file H-p "packages.el")
+(defmacro keys-to-open-files (&rest keys-and-files)
+  (let ((key-to-open-file-statements
+	  (mapcar (lambda (pair)
+		    (cons 'key-to-open-file pair))
+		  (break-args-into-pairs keys-and-files))))
+    `(progn ,@key-to-open-file-statements)))
+
+
+(keys-to-open-files
+ H-i "init"
+ H-k "keys"
+ H-g "global"
+ H-p "packages")
+
 
 
 
