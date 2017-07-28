@@ -62,6 +62,8 @@
   s-k kill-this-buffer
 
   H-s (switch-to-buffer "*scratch*")
+
+  H-h shell
   )
 
 
