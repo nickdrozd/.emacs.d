@@ -65,6 +65,9 @@
   H-s (switch-to-buffer "*scratch*")
 
   H-h shell
+  s-= text-scale-adjust
+  s-- text-scale-adjust
+
   M-\, beginning-of-buffer
   M-. end-of-buffer
   )
