@@ -16,9 +16,14 @@
 
 (require 'package)
 
-(add-to-list 'package-archives
-             '("melpa" . "https://stable.melpa.org/packages/")
-             t)
+(setq package-archives '(("gnu" . "http://elpa.gnu.org/packages/")
+			 ("melpa-stable" . "http://stable.melpa.org/packages/")
+			 ("melpa" . "http://melpa.org/packages/")
+			 ("org" . "http://orgmode.org/elpa/"))
+      package-archive-priorities '(("gnu" . 3)
+				   ("org" . 2)
+				   ("melpa-stable" . 1)
+				   ("melpa" . 0)))
 
 (package-initialize)
 
