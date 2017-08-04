@@ -30,6 +30,16 @@
   :ensure t
   :config (global-flycheck-mode))
 
+(use-package god-mode
+  :ensure t
+  :config
+  (setq god-mod-alist '((nil . "C-")
+			("m" . "M-")
+			("u" . "s-")
+			("y" . "H-"))
+	god-literal-key " ")
+  (defkey <escape> god-mode-all))
+
 (use-package ido
   :init (ido-mode 'both)
   :config (setq
