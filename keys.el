@@ -65,6 +65,8 @@
   H-s (switch-to-buffer "*scratch*")
 
   H-h shell
+  M-\, beginning-of-buffer
+  M-. end-of-buffer
   )
 
 
