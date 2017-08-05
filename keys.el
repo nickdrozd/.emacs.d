@@ -88,6 +88,8 @@
   <escape> god-mode-all
   C-\` god-mode-all
   C-\\ god-mode-all
+
+  s-\\ toggle-input-method
   )
 
 
