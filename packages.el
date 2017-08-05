@@ -40,7 +40,6 @@
 	god-literal-key " "))
 
 (use-package ido
-  :init (ido-mode 'both)
   :config (setq
 	   ido-enable-flex-matching t
 	   ido-use-filename-at-point 'guess
@@ -50,9 +49,6 @@
   :ensure t
   :config (setq magit-log-arguments '("--graph" "--color" "--decorate" "-n256")
                 magit-rebase-arguments '("--autosquash" "--autostash")))
-
-(use-package midnight
-  :config (midnight-mode t))
 
 (use-package org
   :config

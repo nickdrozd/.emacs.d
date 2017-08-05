@@ -11,6 +11,7 @@
   `(toggle-modes 0 ,@modes))
 
 (enable-modes
+ ido-mode
  column-number-mode
  show-paren-mode
  global-hl-line-mode
@@ -22,6 +23,7 @@
  tooltip-mode
 
  menu-bar-mode
+ midnight-mode
  )
 
 (disable-modes
