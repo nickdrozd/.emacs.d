@@ -81,6 +81,11 @@
 
   M-\, beginning-of-buffer
   M-. end-of-buffer
+
+  ;; which one is best? maybe they all have their place
+  <escape> god-mode-all
+  C-\` god-mode-all
+  C-\\ god-mode-all
   )
 
 

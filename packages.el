@@ -37,8 +37,7 @@
 			("m" . "M-")
 			("u" . "s-")
 			("y" . "H-"))
-	god-literal-key " ")
-  (defkey <escape> god-mode-all))
+	god-literal-key " "))
 
 (use-package ido
   :init (ido-mode 'both)
