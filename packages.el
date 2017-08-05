@@ -54,9 +54,10 @@
   :ensure t
   :config
   (setq god-mod-alist '((nil . "C-")
-			("m" . "M-")
+			("j" . "M-")
 			("u" . "s-")
-			("y" . "H-"))
+			("y" . "H-")
+			("m" . "C-M-"))
 	god-literal-key " "))
 
 (use-package ido
