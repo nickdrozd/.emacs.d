@@ -130,9 +130,9 @@
 
 (defmacro keys-to-open-files (&rest keys-and-files)
   (let ((key-to-open-file-statements
-	  (mapcar (lambda (pair)
-		    (cons 'key-to-open-file pair))
-		  (break-args-into-pairs keys-and-files))))
+	 (mapcar (lambda (pair)
+		   (cons 'key-to-open-file pair))
+		 (break-args-into-pairs keys-and-files))))
     `(progn ,@key-to-open-file-statements)))
 
 
@@ -141,3 +141,21 @@
  H-k "keys"
  H-g "global"
  H-p "packages")
+
+
+
+
+(defmacro defalq (symbol definition)
+  `(defalias ',symbol ',definition))
+
+(defmacro defaliases (&rest als-and-defs)
+  (let ((defalq-statements
+	  (mapcar (lambda (pair)
+		    (cons 'defalq pair))
+		  (break-args-into-pairs als-and-defs))))
+    `(progn ,@defalq-statements)))
+
+(defaliases
+  qrr query-replace-regexp
+  sh shell
+  )

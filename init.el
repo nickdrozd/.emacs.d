@@ -29,8 +29,6 @@
 
 (setq custom-file (emacs-file "custom.el"))
 
-(defalias 'qrr 'query-replace-regexp)
-(defalias 'sh 'shell)
 
 
 
