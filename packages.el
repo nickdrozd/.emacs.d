@@ -79,8 +79,7 @@
   :config (setq reb-re-syntax 'string))
 
 (use-package slime
-  :config (setq inferior-lisp-program "sbcl")
-  :defer (slime))
+  :config (setq inferior-lisp-program "sbcl"))
 
 (use-package smex
   :ensure t
