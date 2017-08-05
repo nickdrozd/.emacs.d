@@ -12,26 +12,7 @@
 
 ;(set-frame-parameter nil 'fullscreen 'maximized)
 
-;;;
-
-(require 'package)
-
-(setq package-archives '(("gnu" . "http://elpa.gnu.org/packages/")
-			 ("melpa-stable" . "http://stable.melpa.org/packages/")
-			 ("melpa" . "http://melpa.org/packages/")
-			 ("org" . "http://orgmode.org/elpa/"))
-      package-archive-priorities '(("gnu" . 3)
-				   ("org" . 2)
-				   ("melpa-stable" . 1)
-				   ("melpa" . 0)))
-
-(package-initialize)
-
-(unless (package-installed-p 'use-package)
-  (package-refresh-contents)
-  (package-install 'use-package))
-
-;;;
+(setq package--init-file-ensured t)
 
 (defun emacs-file (file)
   (expand-file-name file user-emacs-directory))

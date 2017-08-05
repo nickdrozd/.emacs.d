@@ -1,3 +1,23 @@
+(require 'package)
+
+(setq package-archives '(("gnu" . "http://elpa.gnu.org/packages/")
+			 ("melpa-stable" . "http://stable.melpa.org/packages/")
+			 ("melpa" . "http://melpa.org/packages/")
+			 ("org" . "http://orgmode.org/elpa/"))
+      package-archive-priorities '(("gnu" . 3)
+				   ("org" . 2)
+				   ("melpa-stable" . 1)
+				   ("melpa" . 0)))
+
+(package-initialize)
+
+;; bootstrap use-package
+(unless (package-installed-p 'use-package)
+  (package-refresh-contents)
+  (package-install 'use-package))
+
+;;;
+
 (use-package avy
   :ensure t
   :bind (("M-g M-g" . avy-goto-line)
