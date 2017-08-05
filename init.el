@@ -40,7 +40,3 @@
   (balance-windows))
 
 (add-hook 'window-setup-hook 'open-4-windows)
-
-
-(dolist (regexp '("\*magit:.+" "\*shell\*"))
-  (add-to-list 'same-window-regexps regexp t))

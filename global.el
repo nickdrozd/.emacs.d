@@ -56,3 +56,6 @@
 ;; (add-hook 'focus-out-hook #'garbage-collect)
 
 (add-hook 'before-save-hook 'delete-trailing-whitespace)
+
+(dolist (regexp '("\*magit:.+" "\*shell\*"))
+  (add-to-list 'same-window-regexps regexp t))
