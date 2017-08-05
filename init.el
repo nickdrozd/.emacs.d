@@ -32,11 +32,15 @@
 
 
 
-(defun open-4-windows ()
+(defun open-windows ()
+  "Fills frame with windows of width >= 80.
+The message 'opening windows' seems to be
+necessary to make it run at startup, but why?"
   (interactive)
+  (message "opening windows...")
   (delete-other-windows)
-  (while (< (count-windows) 4)
-    (split-window-right))
-  (balance-windows))
+  (while (< 80 (/ (window-width) 2))
+    (split-window-right)
+    (balance-windows)))
 
-(add-hook 'window-setup-hook 'open-4-windows)
+(add-hook 'window-setup-hook 'open-windows)
