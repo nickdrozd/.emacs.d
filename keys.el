@@ -66,6 +66,8 @@
 
   H-h shell
 
+  s-\; eval-expression ;; previously M-:
+
   C-0 delete-window
   C-1 delete-other-windows
   C-2 split-window-below
