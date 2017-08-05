@@ -70,8 +70,6 @@
   s-\; eval-expression ;; previously M-:
   s-\' eval-last-sexp
 
-  (C-x g) magit-status
-
   C-0 delete-window
   C-1 delete-other-windows
   C-2 split-window-below
@@ -83,11 +81,6 @@
 
   M-\, beginning-of-buffer
   M-. end-of-buffer
-
-  ;; which one is best? maybe they all have their place
-  <escape> god-mode-all
-  C-\` god-mode-all
-  C-\\ god-mode-all
 
   s-\\ toggle-input-method
   )

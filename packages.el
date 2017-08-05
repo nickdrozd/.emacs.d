@@ -53,12 +53,17 @@
 (use-package god-mode
   :ensure t
   :config
-  (setq god-mod-alist '((nil . "C-")
+  (setq god-literal-key " "
+	god-mod-alist '((nil . "C-")
 			("j" . "M-")
 			("u" . "s-")
 			("y" . "H-")
-			("m" . "C-M-"))
-	god-literal-key " "))
+			("m" . "C-M-")))
+  (defkeys
+    ;; which one is best? maybe they all have their place
+    <escape> god-mode-all
+    C-\` god-mode-all
+    C-\\ god-mode-all))
 
 (use-package ido
   :config (setq
@@ -68,8 +73,10 @@
 
 (use-package magit
   :ensure t
-  :config (setq magit-log-arguments '("--graph" "--color" "--decorate" "-n256")
-                magit-rebase-arguments '("--autosquash" "--autostash")))
+  :config
+  (setq magit-log-arguments '("--graph" "--color" "--decorate" "-n256")
+	magit-rebase-arguments '("--autosquash" "--autostash"))
+  (defkey (C-x g) magit-status))
 
 (use-package org
   :config
