@@ -75,7 +75,6 @@
   :config (setq python-shell-interpreter "python3"))
 
 (use-package re-builder
-  :bind (("C-c R" . re-builder))
   :config (setq reb-re-syntax 'string))
 
 (use-package slime
