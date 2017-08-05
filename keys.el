@@ -66,7 +66,9 @@
 
   H-h shell
 
+  ;; should these be C- or s-?
   s-\; eval-expression ;; previously M-:
+  s-\' eval-last-sexp
 
   (C-x g) magit-status
 
