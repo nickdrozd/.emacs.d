@@ -14,10 +14,10 @@
   (expand-file-name file user-emacs-directory))
 
 (defvar emacs.d-files
-  '("keys.el"
+  '("custom.el"
     "global.el"
+    "keys.el"
     "windows.el"
-    "custom.el"
     "packages.el"))
 
 (dolist (file emacs.d-files)
