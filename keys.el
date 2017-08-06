@@ -2,7 +2,7 @@
 ;; to pass in a function called with arguments.
 ;; For anything more complicated and for functions whose
 ;; names should be saved, use `defbind`.
-(defmacro defkey (keyb func)
+(defmacro defkey (keyb func &optional keymap)
   "Assign a function to a keybinding."
   (let ((keyb-string
 	 (if (listp keyb)
@@ -11,11 +11,11 @@
 			      (concat (symbol-name `,kb) " "))
 			    keyb))
 	   (symbol-name `,keyb))))
-    `(global-set-key
-      (kbd ,keyb-string)
-      ,(if (listp func)
-	   `(lambda () (interactive) ,func)
-	 `',func))))
+    `(define-key ,(if keymap keymap 'global-map)
+       (kbd ,keyb-string)
+       ,(if (listp func)
+	    `(lambda () (interactive) ,func)
+	  `',func))))
 
 (defun break-args-into-pairs (args)
   (let ((result nil))
