@@ -8,6 +8,8 @@
    mac-control-modifier 'super
    mac-function-modifier 'hyper))
 
+(load-theme 'manoj-dark)
+
 (setq package--init-file-ensured t)
 
 (defun emacs-file (file)
