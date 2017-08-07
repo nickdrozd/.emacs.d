@@ -58,10 +58,20 @@
 
   (C-c q) query-replace-regexp
 
-  C-w backward-kill-word
-  (C-x C-k) kill-region
+  ;; semi-cua keys
 
-  s-k kill-this-buffer
+  C-k kill-ring-save
+  M-k kill-region
+
+  C-w kill-this-buffer
+
+  C-v yank
+  M-v yank-pop
+
+  C-y backward-kill-word
+  M-y kill-line
+
+  C-z undo
 
   H-s (switch-to-buffer "*scratch*")
 
