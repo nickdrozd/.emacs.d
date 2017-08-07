@@ -102,6 +102,12 @@
 (use-package python
   :config (setq python-shell-interpreter "python3"))
 
+(use-package rainbow-delimiters
+  :ensure t
+  :config
+  (add-hook 'prog-mode-hook
+	    'rainbow-delimiters-mode))
+
 (use-package re-builder
   :config (setq reb-re-syntax 'string))
 
