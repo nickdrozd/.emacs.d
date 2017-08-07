@@ -78,6 +78,10 @@
 	magit-rebase-arguments '("--autosquash" "--autostash"))
   (defkey (C-x g) magit-status))
 
+(use-package move-text
+  :ensure t
+  :config (move-text-default-bindings))
+
 (use-package org
   :config
   (if (fboundp 'org-babel-load-languages)
