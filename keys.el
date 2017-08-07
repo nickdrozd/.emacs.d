@@ -17,18 +17,19 @@
 	    `(lambda () (interactive) ,func)
 	  `',func))))
 
-(defun break-args-into-pairs (args)
+(defun break-args-into-tuples (n args)
   (let ((result nil))
-    (while (< 1 (length args))
-      (setq result (cons (list (car args) (cadr args)) result))
-      (setq args (cddr args)))
+    (while (< (1- n) (length args))
+      (let ((subseq (cl-subseq args 0 n)))
+	(setq result (cons subseq result))
+	(setq args (nthcdr n args))))
     (nreverse result)))
 
 (defmacro defkeys (&rest keys-and-funcs)
   (let ((defkey-statements
 	  (mapcar (lambda (pair)
 		    (cons 'defkey pair))
-		  (break-args-into-pairs keys-and-funcs))))
+		  (break-args-into-tuples 2 keys-and-funcs))))
     `(progn ,@defkey-statements)))
 
 
@@ -111,7 +112,7 @@
   (let ((key-to-open-file-statements
 	 (mapcar (lambda (pair)
 		   (cons 'key-to-open-file pair))
-		 (break-args-into-pairs keys-and-files))))
+		 (break-args-into-tuples 2 keys-and-files))))
     `(progn ,@key-to-open-file-statements)))
 
 
@@ -132,7 +133,7 @@
   (let ((defalq-statements
 	  (mapcar (lambda (pair)
 		    (cons 'defalq pair))
-		  (break-args-into-pairs als-and-defs))))
+		  (break-args-into-tuples 2 als-and-defs))))
     `(progn ,@defalq-statements)))
 
 (defaliases
