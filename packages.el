@@ -116,8 +116,11 @@
 
 (use-package smex
   :ensure t
-  :bind (("M-x" . smex))
-  :config (smex-initialize))
+  :config
+  (smex-initialize)
+  (defkeys
+    M-x smex
+    (C-x C-x) smex))
 
 (use-package which-key
   :ensure t

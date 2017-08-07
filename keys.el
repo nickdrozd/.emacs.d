@@ -54,7 +54,7 @@
   C-\, (other-window -1)
 
   ;; Alternative to M-x (sites.google.com/site/steveyegge2/effective-emacs)
-  (C-c C-m) execute-extended-command
+  (C-x C-x) execute-extended-command
 
   (C-c q) query-replace-regexp
 
