@@ -28,7 +28,7 @@
 (defmacro defkeys (&rest keys-and-funcs)
   (let ((defkey-statements
 	  (mapcar (lambda (pair)
-		    (cons 'defkey pair))
+		    `(defkey ,@pair))
 		  (break-args-into-tuples 2 keys-and-funcs))))
     `(progn ,@defkey-statements)))
 
@@ -121,7 +121,7 @@
 (defmacro keys-to-open-files (&rest keys-and-files)
   (let ((key-to-open-file-statements
 	 (mapcar (lambda (pair)
-		   (cons 'key-to-open-file pair))
+		   `(key-to-open-file ,@pair))
 		 (break-args-into-tuples 2 keys-and-files))))
     `(progn ,@key-to-open-file-statements)))
 
@@ -142,7 +142,7 @@
 (defmacro defaliases (&rest als-and-defs)
   (let ((defalq-statements
 	  (mapcar (lambda (pair)
-		    (cons 'defalq pair))
+		    `(defalq ,@pair))
 		  (break-args-into-tuples 2 als-and-defs))))
     `(progn ,@defalq-statements)))
 
