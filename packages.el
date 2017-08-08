@@ -122,6 +122,10 @@
     M-x smex
     (C-x C-x) smex))
 
+(use-package text-mode
+  :preface (provide 'text-mode)
+  :config (add-hook 'text-mode-hook 'auto-fill-mode))
+
 (use-package which-key
   :ensure t
   :config
