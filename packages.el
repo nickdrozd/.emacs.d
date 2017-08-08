@@ -63,7 +63,15 @@
     ;; which one is best? maybe they all have their place
     <escape> god-mode-all
     C-\` god-mode-all
-    C-\\ god-mode-all))
+    C-\\ god-mode-all)
+  (defun god-mode-update-cursor ()
+    (setq cursor-type
+	  (if (or god-local-mode
+		  buffer-read-only)
+	      'hollow
+	    'box)))
+  (add-hook 'god-mode-enabled-hook 'god-mode-update-cursor)
+  (add-hook 'god-mode-disabled-hook 'god-mode-update-cursor))
 
 (use-package ido
   :config (setq
