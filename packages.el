@@ -123,6 +123,9 @@
 (use-package re-builder
   :config (setq reb-re-syntax 'string))
 
+(use-package rust-mode
+  :ensure t)
+
 (use-package slime
   :config (setq inferior-lisp-program "sbcl"))
 
