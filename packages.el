@@ -144,6 +144,10 @@
   (which-key-mode)
   (setq which-key-idle-delay 2.0))
 
+(use-package yasnippet
+  :ensure t
+  :config (yas-global-mode))
+
 (use-package yaml-mode)
 
 ;(provide 'install-packages)
