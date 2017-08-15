@@ -53,6 +53,9 @@
   C-. other-window
   C-\, (other-window -1)
 
+  C-<up> scroll-down-command
+  C-<down> scroll-up-command
+
   ;; Alternative to M-x (sites.google.com/site/steveyegge2/effective-emacs)
   (C-x C-x) execute-extended-command
 
