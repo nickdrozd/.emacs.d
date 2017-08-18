@@ -133,6 +133,12 @@
 (use-package slime
   :config (setq inferior-lisp-program "sbcl"))
 
+(use-package shell
+  :config
+  (add-hook 'shell-mode-hook
+	    (lambda ()
+	      (yas-minor-mode -1))))
+
 (use-package smex
   :ensure t
   :config
