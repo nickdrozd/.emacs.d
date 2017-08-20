@@ -115,6 +115,13 @@
   (setq org-confirm-babel-evaluate nil)
   (define-key org-mode-map (kbd "C-,") nil))
 
+(use-package prog-mode
+  :config
+  (add-hook 'prog-mode-hook
+	    (lambda ()
+	      (auto-fill-mode)
+	      (setq comment-auto-fill-only-comments t))))
+
 (use-package python
   :config (setq python-shell-interpreter "python3"))
 
