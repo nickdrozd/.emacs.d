@@ -64,6 +64,17 @@
 
 (use-package dired-x)
 
+(use-package engine-mode
+  :ensure t
+  :config
+  (engine-mode)
+  (engine/set-keymap-prefix (kbd "C-c ;"))
+  (setq engine/browser-function 'eww-browse-url)
+  (let ((engine-list (emacs-file "engine-list.el")))
+    (if (file-exists-p engine-list)
+	(load engine-list)
+      (message "Failed to load engine-list.el"))))
+
 (use-package exec-path-from-shell
   :if (or *is-mac* *is-linux*)
   :ensure t
