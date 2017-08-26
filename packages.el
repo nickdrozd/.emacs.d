@@ -18,6 +18,21 @@
 
 ;;;
 
+(use-package ace-window
+  :ensure t
+  :config
+  (defkey C-o ace-window)
+  (ace-window-display-mode)
+  (setq aw-keys '(?a ?s ?d ?f ?g ?h ?j ?k ?l))
+  (setq aw-dispatch-always t)
+  (setq aw-dispatch-alist
+	'((?0 aw-delete-window " Ace - Delete Window")
+	  (?m aw-swap-window " Ace - Swap Window")
+	  (?n aw-flip-window)
+	  (?2 aw-split-window-vert " Ace - Split Vert Window")
+	  (?3 aw-split-window-horz " Ace - Split Horz Window")
+	  (?1 delete-other-windows " Ace - Maximize Window"))))
+
 (use-package avy
   :ensure t
   :bind (("M-g M-g" . avy-goto-line)
