@@ -146,7 +146,8 @@
   (add-hook 'prog-mode-hook
 	    (lambda ()
 	      (auto-fill-mode)
-	      (setq comment-auto-fill-only-comments t))))
+	      (setq comment-auto-fill-only-comments t)
+	      (hs-minor-mode))))
 
 (use-package python
   :config (setq python-shell-interpreter "python3"))
