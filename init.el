@@ -19,10 +19,28 @@
   '("custom.el"
     "global.el"
     "keys.el"
-    "windows.el"
     "packages.el"))
 
 (dolist (file emacs.d-files)
   (load (emacs-file file)))
 
 (setq custom-file (emacs-file "custom.el"))
+
+;;;
+
+(add-to-list 'initial-frame-alist '(fullscreen . maximized))
+
+;; This still doesn't work quite right -- on a wide monitor, it opens
+;; either too many or too few windows.
+(defun open-windows ()
+  "Fills frame with windows of width >= 80.
+The message 'opening windows' seems to be
+necessary to make it run at startup, but why?"
+  (interactive)
+  (message "opening windows...")
+  (delete-other-windows)
+  (while (< 80 (/ (window-width) 2))
+    (split-window-right)
+    (balance-windows)))
+
+(add-hook 'window-setup-hook 'open-windows)

@@ -133,7 +133,6 @@
  H-i "init"
  H-k "keys"
  H-g "global"
- H-w "windows"
  H-p "packages")
 
 
