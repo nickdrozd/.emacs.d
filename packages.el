@@ -149,6 +149,10 @@
 	      (setq comment-auto-fill-only-comments t)
 	      (hs-minor-mode))))
 
+(use-package projectile
+  :ensure t
+  :config (projectile-global-mode))
+
 (use-package python
   :config (setq python-shell-interpreter "python3"))
 
