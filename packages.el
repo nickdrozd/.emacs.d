@@ -51,18 +51,14 @@
   ;; The default key for dired-up-directory is ^ -- wtf?
   ;; That might be literally the most inconvenient key.
   ;; Make it easy to go up from either side of the keyboard.
-  (add-hook
-   'dired-mode-hook
-   (lambda ()
-     (define-key dired-mode-map "3" 'dired-up-directory)
-     (define-key dired-mode-map ";" 'dired-up-directory)
-     (define-key dired-mode-map "`" 'dired-find-file)))
+  (define-key dired-mode-map ";" 'dired-up-directory)
+  (define-key dired-mode-map "3" 'dired-find-file)
   (add-hook
    'dired-mode-hook
    #'auto-revert-mode)
+  (require 'dired-x)
   (defkey (C-x C-d) dired-jump))
 
-(use-package dired-x)
 
 (use-package engine-mode
   :ensure t
