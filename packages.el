@@ -59,6 +59,9 @@
   (require 'dired-x)
   (defkey (C-x C-d) dired-jump))
 
+(use-package dumb-jump
+  :ensure t
+  :config (dumb-jump-mode))
 
 (use-package engine-mode
   :ensure t
