@@ -117,7 +117,7 @@
   :config
   (setq magit-log-arguments '("--graph" "--color" "--decorate" "-n256")
 	magit-rebase-arguments '("--autosquash" "--autostash"))
-  (defkey (C-x g) magit-status))
+  (defkey M-g magit-status))
 
 (use-package move-text
   :ensure t
