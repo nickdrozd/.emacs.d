@@ -42,6 +42,10 @@
   :ensure t
   :config (beacon-mode))
 
+(use-package company
+  :ensure t
+  :config (global-company-mode))
+
 (use-package conf-mode
   :config (add-hook 'conf-mode-hook
                     (lambda () (setq tab-width 4))))
