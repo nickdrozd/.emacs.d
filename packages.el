@@ -176,6 +176,11 @@
 	    (lambda ()
 	      (yas-minor-mode -1))))
 
+(use-package smartparens
+  :ensure t
+  :config
+  (smartparens-global-mode))
+
 (use-package smex
   :ensure t
   :config
