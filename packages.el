@@ -137,6 +137,7 @@
        (sh . t)
        (scheme . t)
        (lisp . t))))
+  (setq org-src-fontify-natively t)
   (setq org-confirm-babel-evaluate nil)
   (define-key org-mode-map (kbd "C-,") nil))
 
