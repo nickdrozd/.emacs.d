@@ -97,6 +97,8 @@
   M-. end-of-buffer
 
   s-\\ toggle-input-method
+
+  s-l linum-mode
   )
 
 
