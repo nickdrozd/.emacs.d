@@ -98,6 +98,8 @@
 
   s-\\ toggle-input-method
 
+  s-j electric-newline-and-maybe-indent
+
   s-l linum-mode
   )
 

@@ -35,8 +35,10 @@
 
 (use-package avy
   :ensure t
-  :bind (("M-g M-g" . avy-goto-line)
-	 ("M-g a" . avy-goto-char-timer)))
+  :config
+  (defkeys
+    C-j avy-goto-char-timer
+    M-j avy-goto-line))
 
 (use-package beacon
   :ensure t
