@@ -39,7 +39,7 @@
 
   ;; ibuffer is better than buffer-list
   (C-x C-b) ibuffer
-  s-b ido-switch-buffer
+  C-t ido-switch-buffer
 
   ;; Make regexp search the default
   C-s isearch-forward-regexp
