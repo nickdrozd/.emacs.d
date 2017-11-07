@@ -101,6 +101,9 @@
   s-j electric-newline-and-maybe-indent
 
   s-l linum-mode
+
+  ;; closing frames always crashes emacs on my mac
+  s-n nil
   )
 
 
