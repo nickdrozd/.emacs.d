@@ -223,6 +223,9 @@
     M-x smex
     (C-x C-x) smex))
 
+(use-package suggest
+  :ensure t)
+
 (use-package text-mode
   :preface (provide 'text-mode)
   :config (add-hook 'text-mode-hook 'auto-fill-mode))
