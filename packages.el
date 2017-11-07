@@ -119,6 +119,9 @@
 (use-package go-mode
   :ensure t)
 
+(use-package helpful
+  :ensure t)
+
 (use-package ido
   :config (setq
 	   ido-enable-flex-matching t
