@@ -6,3 +6,6 @@ tutorial/
 url/
 projectile-bookmarks.eld
 snippets/
+.cask/
+recentf
+tramp
