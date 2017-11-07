@@ -128,6 +128,11 @@
 	   ido-use-filename-at-point 'guess
 	   ido-use-url-at-point t))
 
+(use-package info
+  :config
+  (add-to-list 'Info-directory-list
+               (expand-file-name "~/info")))
+
 (use-package magit
   :ensure t
   :config
