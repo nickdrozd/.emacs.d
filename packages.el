@@ -61,6 +61,8 @@
   ;; Make it easy to go up from either side of the keyboard.
   (define-key dired-mode-map ";" 'dired-up-directory)
   (define-key dired-mode-map "3" 'dired-find-file)
+  (define-key dired-mode-map (kbd "C-o") nil)
+  (define-key dired-mode-map (kbd "C-t") nil)
   (add-hook
    'dired-mode-hook
    #'auto-revert-mode)
