@@ -58,5 +58,7 @@
 
 (add-hook 'before-save-hook 'delete-trailing-whitespace)
 
+(add-hook 'eval-expression-minibuffer-setup-hook 'paredit-mode)
+
 (dolist (regexp '("\*magit:.+" "\*shell\*"))
   (add-to-list 'same-window-regexps regexp t))
