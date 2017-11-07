@@ -133,6 +133,10 @@
   (add-to-list 'Info-directory-list
                (expand-file-name "~/info")))
 
+(use-package javascript
+  :config
+  (setq js-indent-level 2))
+
 (use-package magit
   :ensure t
   :config
