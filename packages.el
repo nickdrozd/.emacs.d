@@ -177,7 +177,9 @@
 	    (lambda ()
 	      (auto-fill-mode)
 	      (setq comment-auto-fill-only-comments t)
-	      (hs-minor-mode))))
+	      (hs-minor-mode)
+	      (setq indent-tabs-mode nil)
+	      (setq tab-width 4))))
 
 (use-package projectile
   :ensure t
