@@ -116,6 +116,9 @@
   (add-hook 'god-mode-enabled-hook 'god-mode-update-cursor)
   (add-hook 'god-mode-disabled-hook 'god-mode-update-cursor))
 
+(use-package go-mode
+  :ensure t)
+
 (use-package ido
   :config (setq
 	   ido-enable-flex-matching t
