@@ -145,6 +145,9 @@
     M-g magit-status
     s-b magit-blame))
 
+(use-package markdown-mode
+  :ensure t)
+
 (use-package move-text
   :ensure t
   :config (move-text-default-bindings))
