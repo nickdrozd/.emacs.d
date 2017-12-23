@@ -28,12 +28,15 @@
   (setq aw-keys '(?a ?s ?d ?f ?g ?h ?j ?k ?l))
   (setq aw-dispatch-always t)
   (setq aw-dispatch-alist
-	'((?0 aw-delete-window " Ace - Delete Window")
-	  (?m aw-swap-window " Ace - Swap Window")
-	  (?n aw-flip-window)
-	  (?2 aw-split-window-vert " Ace - Split Vert Window")
-	  (?3 aw-split-window-horz " Ace - Split Horz Window")
-	  (?1 delete-other-windows " Ace - Maximize Window"))))
+        '((?0 aw-delete-window "Delete Window")
+          (?m aw-swap-window "Swap Window")
+          (?j aw-switch-buffer-in-window "Select Buffer")
+          (?n aw-flip-window)
+          (?2 aw-split-window-vert "Split Vert Window")
+          (?3 aw-split-window-horz "Split Horz Window")
+          (?1 delete-other-windows "Maximize Window")
+          (?u aw-switch-buffer-other-window "Switch Buffer Other Window")
+          (?? aw-show-dispatch-help))))
 
 (use-package avy
   :ensure t
