@@ -96,6 +96,7 @@
   M-\, beginning-of-buffer
   M-. end-of-buffer
 
+  M-\\ indent-region
   s-\\ toggle-input-method
 
   s-j electric-newline-and-maybe-indent
