@@ -162,3 +162,6 @@
   qrr query-replace-regexp
   sh shell
   )
+
+
+(provide 'keys)

@@ -1,4 +1,5 @@
 (require 'package)
+(require 'keys)
 
 (setq package-archives
       '(("gnu" . "https://elpa.gnu.org/packages/")
