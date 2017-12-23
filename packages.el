@@ -105,11 +105,7 @@
 			("u" . "s-")
 			("y" . "H-")
 			("m" . "C-M-")))
-  (defkeys
-    ;; which one is best? maybe they all have their place
-    <escape> god-mode-all
-    C-\` god-mode-all
-    C-\\ god-mode-all)
+  (defkey C-\\ god-mode-all)
   (defun god-mode-update-cursor ()
     (setq cursor-type
 	  (if (or god-local-mode
