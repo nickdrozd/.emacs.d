@@ -216,7 +216,14 @@
   :config (setq reb-re-syntax 'string))
 
 (use-package rust-mode
-  :ensure t)
+  :ensure t
+  :config
+  (setq rust-format-on-save t)
+  (use-package cargo
+    :ensure t
+    :config
+    (add-hook 'rust-mode-hook
+              'cargo-minor-mode)))
 
 (use-package slime
   :config (setq inferior-lisp-program "sbcl"))
