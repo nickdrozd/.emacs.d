@@ -105,6 +105,8 @@
 
   ;; closing frames always crashes emacs on my mac
   s-n nil
+
+  C-<return> open-line
   )
 
 
