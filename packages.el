@@ -201,7 +201,9 @@
 
 (use-package projectile
   :ensure t
-  :config (projectile-global-mode))
+  :config
+  (setq projectile-switch-project-action 'projectile-dired)
+  (projectile-global-mode))
 
 (use-package python
   :config (setq python-shell-interpreter "python3"))
