@@ -168,6 +168,24 @@
   (setq org-confirm-babel-evaluate nil)
   (define-key org-mode-map (kbd "C-,") nil))
 
+(use-package org-present
+  :ensure t
+  :config
+  (setq
+   org-present-mode-hook
+   (lambda ()
+     (delete-other-windows)
+     (org-present-big)
+     (org-display-inline-images)
+     (org-present-hide-cursor)
+     (org-present-read-only))
+   org-present-mode-quit-hook
+   (lambda ()
+     (org-present-small)
+     (org-remove-inline-images)
+     (org-present-show-cursor)
+     (org-present-read-write))))
+
 (use-package paredit
   :ensure t)
 
