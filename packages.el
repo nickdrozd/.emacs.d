@@ -122,7 +122,13 @@
   (add-hook 'before-save-hook #'gofmt-before-save))
 
 (use-package helpful
-  :ensure t)
+  :ensure t
+  :config
+  (defkeys
+    (C-h f) helpful-callable
+    (C-h v) helpful-variable
+    (C-h k) helpful-key
+    (C-h C-h) helpful-at-point))
 
 (use-package ido
   :config (setq
