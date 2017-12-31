@@ -275,5 +275,3 @@
   :config (yas-global-mode))
 
 (use-package yaml-mode)
-
-;(provide 'install-packages)
