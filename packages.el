@@ -159,21 +159,21 @@
 
 (use-package org
   :config
-  (if (fboundp 'org-babel-load-languages)
-      (org-babel-load-languages ; this uses a modification I made to org
-       '(C python js emacs-lisp sh scheme lisp))
-    (org-babel-do-load-languages ; this is how babel languages are normally set
-     'org-babel-load-languages
-     '((C . t)
-       (python . t)
-       (js . t)
-       (emacs-lisp . t)
-       (sh . t)
-       (scheme . t)
-       (lisp . t))))
   (setq org-src-fontify-natively t)
   (setq org-confirm-babel-evaluate nil)
-  (define-key org-mode-map (kbd "C-,") nil))
+  (define-key org-mode-map (kbd "C-,") nil)
+
+  ;; I think the standard way of configuring babel languages is gross
+  (defun org-babel-load-languages (&optional enable-list disable-list)
+    "Enable the langs in ENABLE-LIST, disable those in DISABLE-LIST."
+    (let ((enable-pairs (mapcar (lambda (lang) (cons lang t)) enable-list))
+          (disable-pairs (mapcar (lambda (lang) (cons lang nil)) disable-list)))
+      (org-babel-do-load-languages
+       'org-babel-load-languages
+       (append enable-pairs disable-pairs))))
+
+  (org-babel-load-languages
+   '(C python js emacs-lisp sh scheme lisp)))
 
 (use-package org-present
   :ensure t
