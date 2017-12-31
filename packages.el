@@ -117,7 +117,9 @@
   (add-hook 'god-mode-disabled-hook 'god-mode-update-cursor))
 
 (use-package go-mode
-  :ensure t)
+  :ensure t
+  :config
+  (add-hook 'before-save-hook #'gofmt-before-save))
 
 (use-package helpful
   :ensure t)
