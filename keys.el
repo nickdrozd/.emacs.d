@@ -87,10 +87,6 @@
   s-\; eval-expression ;; previously M-:
   s-\' eval-last-sexp
 
-  C-0 delete-window
-  C-1 delete-other-windows
-  C-2 split-window-below
-  C-3 split-window-right
   C-= balance-windows
 
   s-= text-scale-adjust
