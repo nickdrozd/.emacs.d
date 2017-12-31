@@ -85,7 +85,7 @@
   (setq engine/browser-function 'eww-browse-url)
   (let ((engine-list (emacs-file "engine-list.el")))
     (if (file-exists-p engine-list)
-	(load engine-list)
+        (load engine-list)
       (message "Failed to load engine-list.el"))))
 
 (use-package exec-path-from-shell
@@ -101,18 +101,18 @@
   :ensure t
   :config
   (setq god-literal-key " "
-	god-mod-alist '((nil . "C-")
-			("j" . "M-")
-			("u" . "s-")
-			("y" . "H-")
-			("m" . "C-M-")))
+        god-mod-alist '((nil . "C-")
+                        ("j" . "M-")
+                        ("u" . "s-")
+                        ("y" . "H-")
+                        ("m" . "C-M-")))
   (defkey C-\\ god-mode-all)
   (defun god-mode-update-cursor ()
     (setq cursor-type
-	  (if (or god-local-mode
-		  buffer-read-only)
-	      'hollow
-	    'box)))
+          (if (or god-local-mode
+                  buffer-read-only)
+              'hollow
+            'box)))
   (add-hook 'god-mode-enabled-hook 'god-mode-update-cursor)
   (add-hook 'god-mode-disabled-hook 'god-mode-update-cursor))
 
@@ -132,9 +132,9 @@
 
 (use-package ido
   :config (setq
-	   ido-enable-flex-matching t
-	   ido-use-filename-at-point 'guess
-	   ido-use-url-at-point t))
+           ido-enable-flex-matching t
+           ido-use-filename-at-point 'guess
+           ido-use-url-at-point t))
 
 (use-package info
   :config
@@ -145,7 +145,7 @@
   :ensure t
   :config
   (setq magit-log-arguments '("--graph" "--color" "--decorate" "-n256")
-	magit-rebase-arguments '("--autosquash" "--autostash"))
+        magit-rebase-arguments '("--autosquash" "--autostash"))
   (defkeys
     M-g magit-status
     s-b magit-blame))
@@ -199,12 +199,12 @@
 (use-package prog-mode
   :config
   (add-hook 'prog-mode-hook
-	    (lambda ()
-	      (auto-fill-mode)
-	      (setq comment-auto-fill-only-comments t)
-	      (hs-minor-mode)
-	      (setq indent-tabs-mode nil)
-	      (setq tab-width 4))))
+            (lambda ()
+              (auto-fill-mode)
+              (setq comment-auto-fill-only-comments t)
+              (hs-minor-mode)
+              (setq indent-tabs-mode nil)
+              (setq tab-width 4))))
 
 (use-package projectile
   :ensure t
@@ -248,8 +248,8 @@
 (use-package shell
   :config
   (add-hook 'shell-mode-hook
-	    (lambda ()
-	      (yas-minor-mode -1))))
+            (lambda ()
+              (yas-minor-mode -1))))
 
 (use-package smartparens
   :ensure t

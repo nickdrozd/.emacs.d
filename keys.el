@@ -5,31 +5,34 @@
 (defmacro defkey (keyb func &optional keymap)
   "Assign a function to a keybinding."
   (let ((keyb-string
-	 (if (listp keyb)
-	     (apply 'concat
-		    (mapcar (lambda (kb)
-			      (concat (symbol-name `,kb) " "))
-			    keyb))
-	   (symbol-name `,keyb))))
-    `(define-key ,(if keymap keymap 'global-map)
+         (if (listp keyb)
+             (apply 'concat
+                    (mapcar (lambda (kb)
+                              (concat (symbol-name `,kb) " "))
+                            keyb))
+           (symbol-name `,keyb))))
+    `(define-key
+       ,(if keymap keymap 'global-map)
        (kbd ,keyb-string)
        ,(if (listp func)
-	    `(lambda () (interactive) ,func)
-	  `',func))))
+            `(lambda () (interactive) ,func)
+          `',func))))
+
 
 (defun break-args-into-tuples (n args)
   (let ((result nil))
     (while (< (1- n) (length args))
       (let ((subseq (cl-subseq args 0 n)))
-	(setq result (cons subseq result))
-	(setq args (nthcdr n args))))
+        (setq result (cons subseq result))
+        (setq args (nthcdr n args))))
     (nreverse result)))
+
 
 (defmacro defkeys (&rest keys-and-funcs)
   (let ((defkey-statements
-	  (mapcar (lambda (pair)
-		    `(defkey ,@pair))
-		  (break-args-into-tuples 2 keys-and-funcs))))
+          (mapcar (lambda (pair)
+                    `(defkey ,@pair))
+                  (break-args-into-tuples 2 keys-and-funcs))))
     `(progn ,@defkey-statements)))
 
 
@@ -110,8 +113,6 @@
   )
 
 
-
-
 (defmacro defbind (keyb name args &rest body)
   "Define a function and give it a keybinding."
   `(progn
@@ -126,16 +127,16 @@
   (kill-buffer))
 
 
-
 (defmacro key-to-open-file (keyb file)
   `(defbind ,keyb ,(make-symbol (concat "edit-conf-" file)) ()
      (find-file (emacs-file ,(concat file ".el")))))
 
+
 (defmacro keys-to-open-files (&rest keys-and-files)
   (let ((key-to-open-file-statements
-	 (mapcar (lambda (pair)
-		   `(key-to-open-file ,@pair))
-		 (break-args-into-tuples 2 keys-and-files))))
+         (mapcar (lambda (pair)
+                   `(key-to-open-file ,@pair))
+                 (break-args-into-tuples 2 keys-and-files))))
     `(progn ,@key-to-open-file-statements)))
 
 
@@ -146,17 +147,17 @@
  H-p "packages")
 
 
-
-
 (defmacro defalq (symbol definition)
   `(defalias ',symbol ',definition))
 
+
 (defmacro defaliases (&rest als-and-defs)
   (let ((defalq-statements
-	  (mapcar (lambda (pair)
-		    `(defalq ,@pair))
-		  (break-args-into-tuples 2 als-and-defs))))
+          (mapcar (lambda (pair)
+                    `(defalq ,@pair))
+                  (break-args-into-tuples 2 als-and-defs))))
     `(progn ,@defalq-statements)))
+
 
 (defaliases
   qrr query-replace-regexp

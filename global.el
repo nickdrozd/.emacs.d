@@ -1,8 +1,8 @@
 (defmacro toggle-modes (flag &rest modes)
   `(progn
      ,@(mapcar (lambda (mode)
-		 `(,mode ,flag))
-	       modes)))
+                 `(,mode ,flag))
+               modes)))
 
 (defmacro enable-modes (&rest modes)
   `(toggle-modes 1 ,@modes))
