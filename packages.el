@@ -19,6 +19,12 @@
   (package-refresh-contents)
   (package-install 'use-package))
 
+;; Get delight first so other packages can use it
+(use-package delight
+  :ensure t)
+
+;; Look at names in `minor-mode-alist' to see what exactly to delight
+
 ;;;
 
 (use-package ace-window
@@ -48,10 +54,12 @@
 
 (use-package beacon
   :ensure t
+  :delight beacon-mode
   :config (beacon-mode))
 
 (use-package company
   :ensure t
+  :delight company-mode
   :config (global-company-mode))
 
 (use-package conf-mode
@@ -95,6 +103,7 @@
 
 (use-package flycheck
   :ensure t
+  :delight flycheck-mode
   :config (global-flycheck-mode))
 
 (use-package god-mode
@@ -129,6 +138,9 @@
     (C-h v) helpful-variable
     (C-h k) helpful-key
     (C-h C-h) helpful-at-point))
+
+(use-package hideshow
+  :delight hs-minor-mode)
 
 (use-package ido
   :config (setq
@@ -208,6 +220,7 @@
 
 (use-package projectile
   :ensure t
+  :delight projectile-mode '(:eval (format " [%s]" (projectile-project-name)))
   :config
   (setq projectile-switch-project-action 'projectile-dired)
   (projectile-global-mode))
@@ -251,8 +264,12 @@
             (lambda ()
               (yas-minor-mode -1))))
 
+(use-package simple
+  :delight auto-fill-function)
+
 (use-package smartparens
   :ensure t
+  :delight smartparens-mode
   :config
   (require 'smartparens-config)
   (smartparens-global-mode))
@@ -274,12 +291,14 @@
 
 (use-package which-key
   :ensure t
+  :delight which-key-mode
   :config
   (which-key-mode)
   (setq which-key-idle-delay 2.0))
 
 (use-package yasnippet
   :ensure t
+  :delight yas-minor-mode
   :config (yas-global-mode))
 
 (use-package yaml-mode)
