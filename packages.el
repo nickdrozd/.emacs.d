@@ -96,6 +96,12 @@
         (load engine-list)
       (message "Failed to load engine-list.el"))))
 
+(use-package evil
+  :ensure t
+  :pin melpa  ; this is apparently needed because of dependencies
+  :config
+  (defkey C-\` evil-mode))
+
 (use-package exec-path-from-shell
   :if (or *is-mac* *is-linux*)
   :ensure t
