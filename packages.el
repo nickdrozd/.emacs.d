@@ -289,7 +289,9 @@
     (C-x C-x) smex))
 
 (use-package suggest
-  :ensure t)
+  :ensure t
+  :config
+  (setq suggest-insert-example-on-start nil))
 
 (use-package text-mode
   :preface (provide 'text-mode)
