@@ -14,6 +14,7 @@
  ido-mode
  column-number-mode
  show-paren-mode
+ global-hi-lock-mode
  global-hl-line-mode
  delete-selection-mode
  subword-mode
