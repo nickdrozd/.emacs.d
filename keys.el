@@ -69,7 +69,7 @@
   C-k kill-ring-save
   M-k kill-region
 
-  C-w kill-this-buffer
+  C-w nil
 
   C-v yank
   M-v yank-pop
