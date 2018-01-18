@@ -98,9 +98,12 @@
 
 (use-package evil
   :ensure t
-  :pin melpa  ; this is apparently needed because of dependencies
+  ;; this is apparently needed because of dependencies
+  :pin melpa
   :config
-  (defkey C-\` evil-mode))
+  (defkey C-\` evil-mode)
+  ;; evil mode brings this in and activates it as a dependency
+  (global-undo-tree-mode -1))
 
 (use-package exec-path-from-shell
   :if (or *is-mac* *is-linux*)
