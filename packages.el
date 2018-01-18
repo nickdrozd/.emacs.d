@@ -120,10 +120,10 @@
   :config
   (setq god-literal-key " "
         god-mod-alist '((nil . "C-")
-                        ("j" . "M-")
-                        ("u" . "s-")
-                        ("y" . "H-")
-                        ("m" . "C-M-")))
+                        ("m" . "M-")
+                        ("i" . "s-")
+                        ("w" . "H-")
+                        ("[" . "C-M-")))
   (defkey C-\\ god-mode-all)
   (defun god-mode-update-cursor ()
     (setq cursor-type
