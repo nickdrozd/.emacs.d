@@ -83,7 +83,9 @@
 
 (use-package dumb-jump
   :ensure t
-  :config (dumb-jump-mode))
+  :config
+  (dumb-jump-mode)
+  (defkey M-g dumb-jump-go-prompt))
 
 (use-package engine-mode
   :ensure t
@@ -168,7 +170,6 @@
   (setq magit-log-arguments '("--graph" "--color" "--decorate" "-n256")
         magit-rebase-arguments '("--autosquash" "--autostash"))
   (defkeys
-    M-g magit-status
     s-b magit-blame))
 
 (use-package markdown-mode
