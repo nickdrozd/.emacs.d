@@ -232,7 +232,7 @@
   :ensure t
   :delight projectile-mode '(:eval (format " [%s]" (projectile-project-name)))
   :config
-  (setq projectile-switch-project-action 'projectile-dired)
+  (setq projectile-switch-project-action 'projectile-vc)
   (projectile-global-mode))
 
 (use-package python
