@@ -141,6 +141,18 @@
   :config
   (add-hook 'before-save-hook #'gofmt-before-save))
 
+(use-package hackernews
+  :ensure t
+  :config
+  (setq
+   hackernews-comments-format "* %3s |"
+   hackernews-item-format "%c %t\n"
+   hackernews-items-per-page 50)
+  (set-face-attribute
+   'hackernews-comment-count nil
+   :foreground "lightblue")
+  (add-to-list 'same-window-regexps "\*hackernews.*\*"))
+
 (use-package helpful
   :ensure t
   :config
