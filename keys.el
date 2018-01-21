@@ -56,8 +56,8 @@
   C-. other-window
   C-\, (other-window -1)
 
-  C-<up> scroll-down-command
-  C-<down> scroll-up-command
+  s-p scroll-down-command
+  s-n scroll-up-command
 
   ;; Alternative to M-x (sites.google.com/site/steveyegge2/effective-emacs)
   (C-x C-x) execute-extended-command
@@ -101,9 +101,6 @@
   s-j electric-newline-and-maybe-indent
 
   s-l linum-mode
-
-  ;; closing frames always crashes emacs on my mac
-  s-n nil
 
   C-<return> open-line
   )
