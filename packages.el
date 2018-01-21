@@ -153,6 +153,14 @@
 (use-package hideshow
   :delight hs-minor-mode)
 
+(use-package hl-line
+  :config
+  (global-hl-line-mode)
+  (set-face-attribute
+   'hl-line nil
+   :background "midnight blue"
+   :foreground nil))
+
 (use-package ido
   :config (setq
            ido-enable-flex-matching t
