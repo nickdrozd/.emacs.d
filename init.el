@@ -30,17 +30,13 @@
 
 (add-to-list 'initial-frame-alist '(fullscreen . maximized))
 
-;; This still doesn't work quite right -- on a wide monitor, it opens
-;; either too many or too few windows.
 (defun open-windows ()
-  "Fills frame with windows of width >= 80.
-The message 'opening windows' seems to be
-necessary to make it run at startup, but why?"
+  "Fills frame with windows of width >= 80."
   (interactive)
-  (message "opening windows...")
   (delete-other-windows)
-  (while (< 80 (/ (window-width) 2))
-    (split-window-right)
+  (let ((number-of-windows (/ (window-width) 80)))
+    (dotimes (_ (1- number-of-windows))
+      (split-window-right))
     (balance-windows)))
 
 (add-hook 'window-setup-hook 'open-windows)
