@@ -78,7 +78,7 @@
   C-z undo
 
   H-s (switch-to-buffer "*scratch*")
-
+  H-m (switch-to-buffer "*Messages*")
   H-h shell
 
   ;; should these be C- or s-?
