@@ -51,8 +51,6 @@
   C-M-r isearch-backward
 
   ;; C-x o? please
-  C-<right> other-window
-  C-<left> (other-window -1)
   C-. other-window
   C-\, (other-window -1)
 
