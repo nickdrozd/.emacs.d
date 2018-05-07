@@ -29,10 +29,11 @@
 
 (use-package ace-window
   :ensure t
+  :load-path "~/ace-window"
   :config
   (defkey C-o ace-window)
   (ace-window-display-mode)
-  (setq aw-keys '(?a ?s ?d ?f ?g ?h ?j ?k ?l))
+  (setq aw-keys '(?a ?s ?d ?f ?z ?x ?c ?v ?b)) ;fix ?b
   (setq aw-dispatch-always t)
   (setq aw-dispatch-alist
         '((?0 aw-delete-window "Delete Window")
@@ -43,7 +44,9 @@
           (?3 aw-split-window-horz "Split Horz Window")
           (?1 delete-other-windows "Maximize Window")
           (?u aw-switch-buffer-other-window "Switch Buffer Other Window")
-          (?? aw-show-dispatch-help))))
+          (?h aw-execute-command-other-window "Execute Command Other Window")
+          (?? aw-show-dispatch-help)))
+  (setq aw-make-frame-char ?6))
 
 (use-package avy
   :ensure t
@@ -81,8 +84,15 @@
   (require 'dired-x)
   (defkey (C-x C-d) dired-jump))
 
+(use-package docker-tramp
+  :ensure t)
+
+(use-package dockerfile-mode
+  :ensure t)
+
 (use-package dumb-jump
   :ensure t
+  :load-path "~/dumb-jump"
   :config
   (dumb-jump-mode)
   (defkey M-g dumb-jump-go-prompt))
@@ -143,6 +153,7 @@
 
 (use-package hackernews
   :ensure t
+  :load-path "~/hackernews.el"
   :config
   (setq
    hackernews-comments-format "* %3s |"
@@ -155,6 +166,7 @@
 
 (use-package helpful
   :ensure t
+  :load-path "~/helpful"
   :config
   (defkeys
     (C-h f) helpful-callable
@@ -186,6 +198,7 @@
 
 (use-package magit
   :ensure t
+  :pin melpa
   :config
   (setq magit-log-arguments '("--graph" "--color" "--decorate" "-n256")
         magit-rebase-arguments '("--autosquash" "--autostash"))
@@ -199,8 +212,44 @@
   :ensure t
   :config (move-text-default-bindings))
 
+(use-package multiple-cursors
+  :ensure t)
+
+(use-package nameless
+  :ensure t
+  :config
+  (add-hook 'emacs-lisp-mode-hook #'nameless-mode))
+
 (use-package org
   :config
+  (defkeys
+    (C-c n a) org-agenda
+    (C-c n c) org-capture
+    (C-c n l) org-store-link)
+
+  ;; https://emacs.cafe/emacs/orgmode/gtd/2017/06/30/orgmode-gtd.html
+  (setq org-agenda-files '("~/org/inbox.org"
+                           "~/org/projects.org"
+                           "~/org/tickler.org"))
+
+  (setq org-capture-templates '(("t" "Todo [inbox]" entry
+                                 (file+headline "~/org/inbox.org" "Tasks")
+                                 "* TODO %i%?")
+                                ("T" "Tickler" entry
+                                 (file+headline "~/org/tickler.org" "Tickler")
+                                 "* %i%? \n %U")))
+
+  (setq org-refile-targets '(("~/org/projects.org" :maxlevel . 3)
+                             ("~/org/someday.org" :level . 1)
+                             ("~/org/tickler.org" :maxlevel . 2)))
+
+  (setq org-todo-keywords
+        '((sequence "TODO(t)" "WAITING(w)" "|" "DONE(d)" "CANCELLED(c)")))
+
+  (defkeys-in-map org-mode-map
+    C-v org-yank
+    C-y backward-kill-word)
+
   (setq org-src-fontify-natively t)
   (setq org-confirm-babel-evaluate nil)
   (define-key org-mode-map (kbd "C-,") nil)
@@ -238,6 +287,9 @@
 (use-package paredit
   :ensure t)
 
+(use-package pdf-tools
+  :ensure t)
+
 (use-package prog-mode
   :config
   (add-hook 'prog-mode-hook
@@ -251,9 +303,10 @@
 (use-package projectile
   :ensure t
   :delight projectile-mode '(:eval (format " [%s]" (projectile-project-name)))
+  :load-path "~/projectile"
   :config
   (setq projectile-switch-project-action 'projectile-vc)
-  (projectile-global-mode))
+  (projectile-mode))
 
 (use-package python
   :config (setq python-shell-interpreter "python3"))
@@ -278,7 +331,7 @@
 (use-package rust-mode
   :ensure t
   :config
-  (setq rust-format-on-save t)
+  (setq rust-format-on-save nil)
   (use-package cargo
     :ensure t
     :config
@@ -314,6 +367,7 @@
 
 (use-package suggest
   :ensure t
+  :load-path "~/suggest"
   :config
   (setq suggest-insert-example-on-start nil))
 
