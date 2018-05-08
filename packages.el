@@ -199,6 +199,9 @@
   :ensure t
   :config (move-text-default-bindings))
 
+(use-package multiple-cursors
+  :ensure t)
+
 (use-package org
   :config
   (setq org-src-fontify-natively t)
