@@ -14,6 +14,7 @@
     `(define-key
        ,(if keymap keymap 'global-map)
        (kbd ,keyb-string)
+       ;; check (fboundp ,func), set to nil if not
        ,(if (listp func)
             `(lambda () (interactive) ,func)
           `',func))))
@@ -32,6 +33,14 @@
   (let ((defkey-statements
           (mapcar (lambda (pair)
                     `(defkey ,@pair))
+                  (break-args-into-tuples 2 keys-and-funcs))))
+    `(progn ,@defkey-statements)))
+
+
+(defmacro defkeys-in-map (keymap &rest keys-and-funcs)
+  (let ((defkey-statements
+          (mapcar (lambda (pair)
+                    `(defkey ,@pair ,keymap))
                   (break-args-into-tuples 2 keys-and-funcs))))
     `(progn ,@defkey-statements)))
 
