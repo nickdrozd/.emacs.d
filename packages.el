@@ -266,7 +266,7 @@
   :delight projectile-mode '(:eval (format " [%s]" (projectile-project-name)))
   :config
   (setq projectile-switch-project-action 'projectile-vc)
-  (projectile-global-mode))
+  (projectile-mode))
 
 (use-package python
   :config (setq python-shell-interpreter "python3"))
