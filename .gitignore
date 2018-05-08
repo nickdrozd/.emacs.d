@@ -10,3 +10,5 @@ snippets/
 .cask/
 recentf
 tramp
+games/
+.mc-lists.el
