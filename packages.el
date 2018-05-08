@@ -209,6 +209,10 @@
 
 (use-package org
   :config
+  (defkeys-in-map org-mode-map
+    C-v org-yank
+    C-y backward-kill-word)
+
   (setq org-src-fontify-natively t)
   (setq org-confirm-babel-evaluate nil)
   (define-key org-mode-map (kbd "C-,") nil)
