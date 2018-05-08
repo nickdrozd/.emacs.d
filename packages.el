@@ -202,6 +202,11 @@
 (use-package multiple-cursors
   :ensure t)
 
+(use-package nameless
+  :ensure t
+  :config
+  (add-hook 'emacs-lisp-mode-hook #'nameless-mode))
+
 (use-package org
   :config
   (setq org-src-fontify-natively t)
