@@ -246,6 +246,11 @@
 (use-package paredit
   :ensure t)
 
+(use-package pdf-tools
+  :ensure t
+  :config
+  (setq pdf-view-midnight-colors '("white" . "black")))
+
 (use-package prog-mode
   :config
   (add-hook 'prog-mode-hook
