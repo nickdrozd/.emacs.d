@@ -217,6 +217,30 @@
 
 (use-package org
   :config
+  (defkeys
+    (C-c n a) org-agenda
+    (C-c n c) org-capture
+    (C-c n l) org-store-link)
+
+  ;; https://emacs.cafe/emacs/orgmode/gtd/2017/06/30/orgmode-gtd.html
+  (setq org-agenda-files '("~/org/inbox.org"
+                           "~/org/projects.org"
+                           "~/org/tickler.org"))
+
+  (setq org-capture-templates '(("t" "Todo [inbox]" entry
+                                 (file+headline "~/org/inbox.org" "Tasks")
+                                 "* TODO %i%?")
+                                ("T" "Tickler" entry
+                                 (file+headline "~/org/tickler.org" "Tickler")
+                                 "* %i%? \n %U")))
+
+  (setq org-refile-targets '(("~/org/projects.org" :maxlevel . 3)
+                             ("~/org/someday.org" :level . 1)
+                             ("~/org/tickler.org" :maxlevel . 2)))
+
+  (setq org-todo-keywords
+        '((sequence "TODO(t)" "WAITING(w)" "|" "DONE(d)" "CANCELLED(c)")))
+
   (defkeys-in-map org-mode-map
     C-v org-yank
     C-y backward-kill-word)
