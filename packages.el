@@ -43,7 +43,9 @@
           (?3 aw-split-window-horz "Split Horz Window")
           (?1 delete-other-windows "Maximize Window")
           (?u aw-switch-buffer-other-window "Switch Buffer Other Window")
-          (?? aw-show-dispatch-help))))
+          (?h aw-execute-command-other-window "Execute Command Other Window")
+          (?? aw-show-dispatch-help)))
+  (setq aw-make-frame-char ?6))
 
 (use-package avy
   :ensure t
