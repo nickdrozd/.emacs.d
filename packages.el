@@ -235,7 +235,7 @@
        (append enable-pairs disable-pairs))))
 
   (org-babel-load-languages
-   '(C python js emacs-lisp sh scheme lisp)))
+   '(C python js emacs-lisp shell scheme lisp)))
 
 (use-package org-present
   :ensure t
