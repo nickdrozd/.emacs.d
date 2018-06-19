@@ -1,3 +1,5 @@
+(require 'cl-lib)
+
 ;; This might be overkill, but occasionally it's useful
 ;; to pass in a function called with arguments.
 ;; For anything more complicated and for functions whose
