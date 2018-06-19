@@ -32,7 +32,7 @@
   :config
   (defkey C-o ace-window)
   (ace-window-display-mode)
-  (setq aw-keys '(?a ?s ?d ?f ?g ?h ?j ?k ?l))
+  (setq aw-keys '(?a ?s ?d ?f ?z ?x ?c ?v ?b)) ;fix ?b
   (setq aw-dispatch-always t)
   (setq aw-dispatch-alist
         '((?0 aw-delete-window "Delete Window")
