@@ -151,7 +151,13 @@
   (set-face-attribute
    'hackernews-comment-count nil
    :foreground "lightblue")
-  (add-to-list 'same-window-regexps "\*hackernews.*\*"))
+  (add-to-list 'same-window-regexps "\*hackernews.*\*")
+
+  ;; See https://github.com/clarete/hackernews.el/pull/45
+  (define-advice hackernews (:around (fn &rest args) hackernews--dynamic-story-count)
+    "Adapt `hackernews-items-per-page' to current window height."
+    (let ((hackernews-items-per-page (1- (window-text-height))))
+      (apply fn args))))
 
 (use-package helpful
   :ensure t
