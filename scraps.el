@@ -31,3 +31,9 @@
   (interactive)
   (replace-regexp "\\([A-Z]\\)" "_\\1" nil (region-beginning) (region-end))
   (downcase-region (region-beginning) (region-end)))
+
+
+(defun unfill-paragraph ()
+  (interactive)
+  (let ((fill-column 100000))
+    (fill-paragraph)))
