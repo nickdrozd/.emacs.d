@@ -27,6 +27,13 @@
            (insert (current-kill 0)))))
 
 
+(defun expand-macro ()
+  (interactive)
+  (backward-kill-sexp)
+  (prin1 (macroexpand-1 (read (current-kill 0)))
+         (current-buffer)))
+
+
 (defun to-underscore ()
   (interactive)
   (replace-regexp "\\([A-Z]\\)" "_\\1" nil (region-beginning) (region-end))
