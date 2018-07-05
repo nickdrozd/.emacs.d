@@ -77,6 +77,7 @@
 
   C-k kill-ring-save
   M-k kill-region
+  s-k kill-this-buffer
 
   C-w nil
 
