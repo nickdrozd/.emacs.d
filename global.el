@@ -22,12 +22,12 @@
  ;; assuming tooltips are sent to echo area
  tooltip-mode
 
- menu-bar-mode
  midnight-mode
  )
 
 (disable-modes
  tool-bar-mode
+ menu-bar-mode
 
  ;; Time might be nice, but other stuff is included in the default
  display-time-mode
