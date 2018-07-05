@@ -40,3 +40,7 @@
     (balance-windows)))
 
 (add-hook 'window-setup-hook 'open-windows)
+
+;;; Run at start
+
+(shell)
