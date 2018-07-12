@@ -168,7 +168,8 @@
     (C-h f) helpful-callable
     (C-h v) helpful-variable
     (C-h k) helpful-key
-    (C-h C-h) helpful-at-point))
+    (C-h C-h) helpful-at-point
+    (C-h C-q) helpful-kill-buffers))
 
 (use-package hideshow
   :delight hs-minor-mode)
