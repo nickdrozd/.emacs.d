@@ -29,6 +29,7 @@
 
 (use-package ace-window
   :ensure t
+  :pin melpa
   :config
   (defkey C-o ace-window)
   (ace-window-display-mode)
@@ -163,6 +164,7 @@
 
 (use-package helpful
   :ensure t
+  :pin melpa
   :config
   (defkeys
     (C-h f) helpful-callable
@@ -306,6 +308,7 @@
 
 (use-package projectile
   :ensure t
+  :pin melpa
   :delight projectile-mode '(:eval (format " [%s]" (projectile-project-name)))
   :config
   (setq projectile-switch-project-action 'projectile-vc)
@@ -371,6 +374,7 @@
 
 (use-package suggest
   :ensure t
+  :pin melpa
   :config
   (setq suggest-insert-example-on-start nil))
 
