@@ -248,8 +248,12 @@
     C-y backward-kill-word
     M-y org-kill-line)
 
-  (setq org-src-fontify-natively t)
-  (setq org-confirm-babel-evaluate nil)
+  (setq org-src-fontify-natively t
+        org-src-preserve-indentation t
+        org-src-tab-acts-natively t
+        org-src-window-setup 'current-window
+        org-confirm-babel-evaluate nil)
+
   (define-key org-mode-map (kbd "C-,") nil)
 
   ;; I think the standard way of configuring babel languages is gross
