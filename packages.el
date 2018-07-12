@@ -242,8 +242,10 @@
         '((sequence "TODO(t)" "WAITING(w)" "|" "DONE(d)" "CANCELLED(c)")))
 
   (defkeys-in-map org-mode-map
+    C-k kill-ring-save
     C-v org-yank
-    C-y backward-kill-word)
+    C-y backward-kill-word
+    M-y org-kill-line)
 
   (setq org-src-fontify-natively t)
   (setq org-confirm-babel-evaluate nil)
