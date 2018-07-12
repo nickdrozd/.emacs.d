@@ -342,6 +342,7 @@
 
 (use-package shell
   :config
+  (setq comint-input-ignoredups t)
   (add-hook 'shell-mode-hook
             (lambda ()
               (yas-minor-mode -1))))
