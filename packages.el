@@ -382,4 +382,5 @@
   :delight yas-minor-mode
   :config (yas-global-mode))
 
-(use-package yaml-mode)
+(use-package yaml-mode
+  :ensure t)
