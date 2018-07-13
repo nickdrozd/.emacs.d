@@ -221,7 +221,9 @@
 (use-package nameless
   :ensure t
   :config
-  (setq nameless-affect-indentation-and-filling nil)
+  (setq
+   nameless-private-prefix t
+   nameless-affect-indentation-and-filling nil)
   (add-hook 'emacs-lisp-mode-hook #'nameless-mode))
 
 (use-package org
