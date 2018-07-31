@@ -311,6 +311,8 @@
   :ensure t
   :pin melpa
   :delight projectile-mode '(:eval (format " [%s]" (projectile-project-name)))
+  :init
+  (setq projectile-keymap-prefix (kbd "C-c p"))
   :config
   (setq projectile-switch-project-action 'projectile-vc)
   (projectile-mode))
