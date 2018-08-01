@@ -65,6 +65,11 @@
   :delight company-mode
   :config (global-company-mode))
 
+(use-package compile
+  :config
+  (setq
+   compilation-scroll-output t))
+
 (use-package conf-mode
   :config (add-hook 'conf-mode-hook
                     (lambda () (setq tab-width 4))))
