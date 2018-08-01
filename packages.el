@@ -294,6 +294,7 @@
 
 (use-package pdf-tools
   :ensure t
+  :pin melpa
   :config
   (setq pdf-view-midnight-colors '("white" . "black")))
 
