@@ -349,6 +349,7 @@
               'cargo-minor-mode)))
 
 (use-package slime
+  :ensure t
   :config (setq inferior-lisp-program "sbcl"))
 
 (use-package shell
