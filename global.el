@@ -44,6 +44,7 @@
 
  ;; makes windows always open vertically
  split-height-threshold nil
+ split-width-threshold 80
 
  uniquify-buffer-name-style 'forward
  inhibit-startup-message t
