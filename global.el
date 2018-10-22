@@ -65,3 +65,6 @@
 
 (dolist (regexp '("magit:.+" "\*shell\*"))
   (add-to-list 'same-window-regexps regexp t))
+
+(when (boundp 'byte-metering-on)
+  (setq byte-metering-on t))
