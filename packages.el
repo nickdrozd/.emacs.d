@@ -300,6 +300,9 @@
      (org-present-show-cursor)
      (org-present-read-write))))
 
+(use-package ox-jekyll-md
+  :ensure t)
+
 (use-package paredit
   :ensure t)
 
