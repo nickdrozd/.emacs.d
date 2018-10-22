@@ -53,6 +53,8 @@
  )
 
 (put 'upcase-region 'disabled nil)
+(put 'downcase-region 'disabled nil)
+(put 'narrow-to-region 'disabled nil)
 
 ;; good idea?
 ;; (add-hook 'focus-out-hook #'garbage-collect)
