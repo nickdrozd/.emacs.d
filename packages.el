@@ -352,6 +352,9 @@
 (use-package re-builder
   :config (setq reb-re-syntax 'string))
 
+(use-package refine
+  :ensure t)
+
 (use-package rust-mode
   :ensure t
   :config
