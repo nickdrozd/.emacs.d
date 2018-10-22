@@ -309,6 +309,9 @@
   :config
   (setq pdf-view-midnight-colors '("white" . "black")))
 
+(use-package php-mode
+  :ensure t)
+
 (use-package prog-mode
   :config
   (add-hook 'prog-mode-hook
