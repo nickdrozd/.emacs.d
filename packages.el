@@ -123,7 +123,11 @@
 (use-package flycheck
   :ensure t
   :delight flycheck-mode
-  :config (global-flycheck-mode))
+  :config
+  (setq-default
+   flycheck-disabled-checkers
+   '(rust-cargo emacs-lisp-checkdoc))
+  (global-flycheck-mode))
 
 (use-package god-mode
   :ensure t
