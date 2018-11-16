@@ -50,6 +50,7 @@
  inhibit-startup-message t
  sentence-end-double-space nil
  emacs-lisp-docstring-fill-column 50
+ auto-revert-verbose nil
  )
 
 (put 'upcase-region 'disabled nil)
