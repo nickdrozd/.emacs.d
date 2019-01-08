@@ -108,8 +108,6 @@
 
 (use-package evil
   :ensure t
-  ;; this is apparently needed because of dependencies
-  :pin melpa
   :config
   (defkey C-\` evil-mode)
   ;; evil mode brings this in and activates it as a dependency
@@ -312,7 +310,6 @@
 
 (use-package pdf-tools
   :ensure t
-  :pin melpa
   :config
   (setq pdf-view-midnight-colors '("white" . "black")))
 
@@ -331,7 +328,6 @@
 
 (use-package projectile
   :ensure t
-  :pin melpa
   :delight projectile-mode '(:eval (format " [%s]" (projectile-project-name)))
   :init
   (setq projectile-keymap-prefix (kbd "C-c p"))
