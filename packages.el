@@ -342,6 +342,9 @@
 (use-package python
   :config (setq python-shell-interpreter "python3"))
 
+(use-package racket-mode
+  :ensure t)
+
 (use-package rainbow-delimiters
   :ensure t
   :config
