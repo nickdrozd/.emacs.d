@@ -120,6 +120,10 @@
   :ensure t
   :config (exec-path-from-shell-initialize))
 
+(use-package fireplace
+  :ensure t
+  :pin melpa)
+
 (use-package flycheck
   :ensure t
   :delight flycheck-mode
