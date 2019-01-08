@@ -54,9 +54,16 @@
  jka-compr-verbose nil
  )
 
-(put 'upcase-region 'disabled nil)
-(put 'downcase-region 'disabled nil)
-(put 'narrow-to-region 'disabled nil)
+(defmacro enable-functions (&rest functions)
+  `(dolist (func '(,@functions))
+     (put func 'disabled nil)))
+
+(enable-functions
+ upcase-region
+ downcase-region
+ narrow-to-region
+ list-timers
+ )
 
 ;; good idea?
 ;; (add-hook 'focus-out-hook #'garbage-collect)
