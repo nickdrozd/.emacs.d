@@ -60,6 +60,13 @@
   :delight beacon-mode
   :config (beacon-mode))
 
+(use-package csv-mode
+  :ensure t
+  :config
+  (setq
+   csv-align-padding 3
+   csv-align-style 'right))
+
 (use-package company
   :ensure t
   :delight company-mode
