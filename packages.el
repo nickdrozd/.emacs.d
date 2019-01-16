@@ -247,23 +247,38 @@
     (C-c n l) org-store-link)
 
   ;; https://emacs.cafe/emacs/orgmode/gtd/2017/06/30/orgmode-gtd.html
-  (setq org-agenda-files '("~/org/inbox.org"
-                           "~/org/projects.org"
-                           "~/org/tickler.org"))
+  (setq
+   org-agenda-files
+   '("~/org/inbox.org"
+     "~/org/projects.org"
+     "~/org/reminders.org"))
 
-  (setq org-capture-templates '(("t" "Todo [inbox]" entry
-                                 (file+headline "~/org/inbox.org" "Tasks")
-                                 "* TODO %i%?")
-                                ("T" "Tickler" entry
-                                 (file+headline "~/org/tickler.org" "Tickler")
-                                 "* %i%? \n %U")))
+  ;; Each entry is a list with the following items:
+  ;;   keys          The keys that will select the template, as a string.
+  ;;   description   A short string describing the template.
+  ;;   type          Type of entry: entry, item, checkitem, table-line, plain.
+  ;;   target        Specification of where the captured item should be placed.
+  ;;   template      The template for creating the capture item.
+  (setq
+   org-capture-templates
+   '(("i" "Inbox" entry
+      (file+headline "~/org/inbox.org" "Tasks")
+      "* TODO %i%?")
+     ("r" "Reminders" entry
+      (file+headline "~/org/reminders.org" "Reminders")
+      "* %i%? \n %U")))
 
-  (setq org-refile-targets '(("~/org/projects.org" :maxlevel . 3)
-                             ("~/org/someday.org" :level . 1)
-                             ("~/org/tickler.org" :maxlevel . 2)))
+  (setq
+   org-refile-targets
+   '(("~/org/projects.org" :maxlevel . 3)
+     ("~/org/someday.org" :level . 1)
+     ("~/org/reminders.org" :maxlevel . 2)))
 
-  (setq org-todo-keywords
-        '((sequence "TODO(t)" "WAITING(w)" "|" "DONE(d)" "CANCELLED(c)")))
+  (setq
+   org-todo-keywords
+   (let ((todos '("TODO(t)" "NEXT(n)" "WAITING(w)"))
+         (dones '("DONE(d)" "CANCELLED(c)")))
+     `((sequence ,@todos "|" ,@dones))))
 
   (defkeys-in-map org-mode-map
     C-k kill-ring-save
