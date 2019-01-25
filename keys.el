@@ -69,7 +69,7 @@
   s-n scroll-up-command
 
   ;; Alternative to M-x (sites.google.com/site/steveyegge2/effective-emacs)
-  (C-x C-x) execute-extended-command
+  H-x execute-extended-command
 
   (C-c q) query-replace-regexp
 

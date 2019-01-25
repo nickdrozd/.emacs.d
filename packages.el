@@ -420,7 +420,7 @@
   (smex-initialize)
   (defkeys
     M-x smex
-    (C-x C-x) smex))
+    H-x smex))
 
 (use-package suggest
   :ensure t
