@@ -83,6 +83,8 @@
 
 (use-package dired
   :config
+  (require 'dired-x)
+
   ;; The default key for dired-up-directory is ^ -- wtf?
   ;; That might be literally the most inconvenient key.
   ;; Make it easy to go up from either side of the keyboard.
@@ -90,10 +92,12 @@
   (define-key dired-mode-map "3" 'dired-find-file)
   (define-key dired-mode-map (kbd "C-o") nil)
   (define-key dired-mode-map (kbd "C-t") nil)
-  (add-hook
-   'dired-mode-hook
-   #'auto-revert-mode)
-  (require 'dired-x)
+
+  (add-hook 'dired-mode-hook #'auto-revert-mode)
+  (add-hook 'dired-mode-hook #'dired-omit-mode)
+
+  (setq dired-omit-verbose nil)
+
   (defkey (C-x C-d) dired-jump))
 
 (use-package dumb-jump
