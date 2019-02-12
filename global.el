@@ -52,6 +52,7 @@
  emacs-lisp-docstring-fill-column 50
  auto-revert-verbose nil
  jka-compr-verbose nil
+ delete-by-moving-to-trash t
  )
 
 (defmacro enable-functions (&rest functions)
