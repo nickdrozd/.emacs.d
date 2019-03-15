@@ -46,10 +46,3 @@
     (fill-paragraph)))
 
 
-(define-generic-mode 'xmodmap-mode
-  '(?!)
-  '("add" "clear" "keycode" "keysym" "pointer" "remove")
-  nil
-  '("[xX]modmap\\(rc\\)?\\'")
-  nil
-  "Simple mode for xmodmap files.")

@@ -142,6 +142,8 @@
    '(rust-cargo emacs-lisp-checkdoc))
   (global-flycheck-mode))
 
+(use-package generic-x)
+
 (use-package god-mode
   :ensure t
   :config
