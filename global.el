@@ -78,3 +78,15 @@
 
 (when (boundp 'byte-metering-on)
   (setq byte-metering-on t))
+
+;; Backups
+
+(setq
+ make-backup-files      t
+ version-control        nil
+ kept-old-versions      2
+ kept-new-versions      2
+ delete-old-versions    nil
+ backup-by-copying      t
+ backup-directory-alist '(("." . "~/.emacs.d/backups"))
+ )
