@@ -46,3 +46,7 @@
     (fill-paragraph)))
 
 
+(defun dedicate-window (&optional arg)
+  "Dedicate the current window."
+  (interactive)
+  (set-window-dedicated-p (selected-window) (not arg)))
