@@ -48,9 +48,6 @@
 
 
 (defkeys
-  ;; C-x C-s? yeah right
-  M-s save-buffer
-
   ;; ibuffer is better than buffer-list
   (C-x C-b) ibuffer
   C-t ido-switch-buffer
@@ -61,7 +58,7 @@
   C-M-s isearch-forward
   C-M-r isearch-backward
 
-  ;; C-x o? please
+  ;; C-x o is a horrible keybinding for such a common command.
   C-. other-window
   C-\, (other-window -1)
 
@@ -110,7 +107,7 @@
 
   s-j electric-newline-and-maybe-indent
 
-  s-l linum-mode
+  s-l display-line-numbers-mode
 
   C-<return> open-line
   )
