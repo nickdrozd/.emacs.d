@@ -240,6 +240,9 @@
 
 (use-package org
   :config
+  (require 'org-capture)
+  (require 'org-tempo)
+
   (defkeys
     (C-c n a) org-agenda
     (C-c n c) org-capture
@@ -269,9 +272,10 @@
 
   (setq
    org-refile-targets
-   '(("~/org/projects.org" :maxlevel . 3)
+   '(("~/org/projects.org" :maxlevel . 1)
      ("~/org/someday.org" :level . 1)
-     ("~/org/reminders.org" :maxlevel . 2)))
+     ("~/org/reminders.org" :maxlevel . 2)
+     ("~/org/notes.org" :level . 1)))
 
   (setq
    org-todo-keywords
@@ -303,7 +307,7 @@
        (append enable-pairs disable-pairs))))
 
   (org-babel-load-languages
-   '(C python js emacs-lisp shell scheme lisp)))
+   '(C python js emacs-lisp shell scheme lisp makefile)))
 
 (use-package org-present
   :ensure t
