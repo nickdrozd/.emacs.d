@@ -117,13 +117,6 @@
         (load engine-list)
       (message "Failed to load engine-list.el"))))
 
-(use-package evil
-  :ensure t
-  :config
-  (defkey C-\` evil-mode)
-  ;; evil mode brings this in and activates it as a dependency
-  (global-undo-tree-mode -1))
-
 (use-package exec-path-from-shell
   :if (or *is-mac* *is-linux*)
   :ensure t
@@ -132,15 +125,6 @@
 (use-package fireplace
   :ensure t
   :pin melpa)
-
-(use-package flycheck
-  :ensure t
-  :delight flycheck-mode
-  :config
-  (setq-default
-   flycheck-disabled-checkers
-   '(rust-cargo emacs-lisp-checkdoc))
-  (global-flycheck-mode))
 
 (use-package generic-x)
 
@@ -233,9 +217,6 @@
 (use-package move-text
   :ensure t
   :config (move-text-default-bindings))
-
-(use-package multiple-cursors
-  :ensure t)
 
 (use-package nameless
   :ensure t
@@ -399,10 +380,6 @@
     (add-hook 'rust-mode-hook
               'cargo-minor-mode)))
 
-(use-package slime
-  :ensure t
-  :config (setq inferior-lisp-program "sbcl"))
-
 (use-package shell
   :config
   (setq comint-input-ignoredups t))
@@ -441,15 +418,6 @@
   :config
   (which-key-mode)
   (setq which-key-idle-delay 2.0))
-
-(use-package yasnippet
-  :ensure t
-  :delight yas-minor-mode
-  :config
-  (yas-global-mode)
-  (add-hook 'shell-mode-hook
-            (lambda ()
-              (yas-minor-mode -1))))
 
 (use-package yaml-mode
   :ensure t)
