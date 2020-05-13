@@ -106,6 +106,33 @@
   (dumb-jump-mode)
   (defkey M-g dumb-jump-go-prompt))
 
+(use-package elfeed
+  :ensure t
+  :config
+  (defmacro elfeed-set-feeds (&rest feeds)
+    `(setq elfeed-feeds ',(mapcar #'symbol-name feeds)))
+
+  (elfeed-set-feeds
+
+   ;; MN Friends
+   https://begriffs.com/atom.xml
+   https://christianwood.net/feed.xml
+   https://cyberia.club/blog/blog.xml
+   https://davebucklin.com/feed.xml
+   http://faehnri.ch/feed.xml
+   https://www.ianbicking.org/feeds/atom.xml
+   https://kd9kjv.com/feed.xml
+   https://kyle.marek-spartz.org/atom.xml
+   https://mxuribe.com/atom-feed.xml
+   https://spencerkrum.com/posts/index.xml
+   https://sequentialread.com/rss/
+   https://nickdrozd.github.io/feed.xml
+
+   ;; Other
+   https://genehack.blog/atom.xml
+   https://andreyorst.gitlab.io/feed.xml
+   ))
+
 (use-package engine-mode
   :ensure t
   :config
