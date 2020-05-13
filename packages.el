@@ -361,7 +361,10 @@
   (projectile-mode))
 
 (use-package python
-  :config (setq python-shell-interpreter "python3"))
+  :config
+  (setq
+   python-shell-interpreter "python3"
+   python-shell-interpreter-args " -i"))
 
 (use-package racket-mode
   :ensure t)
