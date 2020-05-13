@@ -454,6 +454,13 @@
   :config
   (setq suggest-insert-example-on-start nil))
 
+(use-package tetris
+  :config
+  (advice-add
+   'tetris :around
+   (lambda (_)
+     (message "Stop playing Tetris, you asshole"))))
+
 (use-package text-mode
   :preface (provide 'text-mode)
   :config (add-hook 'text-mode-hook 'auto-fill-mode))
