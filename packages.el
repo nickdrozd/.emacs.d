@@ -198,6 +198,18 @@
            ido-use-filename-at-point 'guess
            ido-use-url-at-point t))
 
+(use-package idris-mode
+  :pin melpa
+  :ensure t
+  :config
+  ;; (setq idris-interpreter-path "~/.cabal/bin/idris")
+  (add-to-list 'completion-ignored-extensions ".ibc")
+  (add-to-list 'dired-omit-extensions ".ibc")
+
+  (defun idris-kill ()
+    (interactive)
+    (kill-process "idris")))
+
 (use-package info
   :config
   (add-to-list 'Info-directory-list
