@@ -405,10 +405,7 @@
 
 (use-package shell
   :config
-  (setq comint-input-ignoredups t)
-  (add-hook 'shell-mode-hook
-            (lambda ()
-              (yas-minor-mode -1))))
+  (setq comint-input-ignoredups t))
 
 (use-package simple
   :delight auto-fill-function)
@@ -448,7 +445,11 @@
 (use-package yasnippet
   :ensure t
   :delight yas-minor-mode
-  :config (yas-global-mode))
+  :config
+  (yas-global-mode)
+  (add-hook 'shell-mode-hook
+            (lambda ()
+              (yas-minor-mode -1))))
 
 (use-package yaml-mode
   :ensure t)
