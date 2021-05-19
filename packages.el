@@ -403,7 +403,7 @@
   :ensure t
   :delight projectile-mode '(:eval (format " [%s]" (projectile-project-name)))
   :init
-  (setq projectile-keymap-prefix (kbd "C-c p"))
+  (define-key projectile-mode-map (kbd "C-c p") 'projectile-command-map)
   :config
   (setq projectile-switch-project-action 'projectile-vc)
   (projectile-mode))
