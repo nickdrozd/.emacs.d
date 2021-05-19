@@ -343,6 +343,7 @@
    )
 
   (define-key org-mode-map (kbd "C-,") nil)
+  (define-key org-mode-map (kbd "C-j") nil)
 
   ;; I think the standard way of configuring babel languages is gross
   (defun org-babel-load-languages (&optional enable-list disable-list)
