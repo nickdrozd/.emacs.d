@@ -143,6 +143,11 @@
    ;; Other
    https://genehack.blog/atom.xml
    https://andreyorst.gitlab.io/feed.xml
+   https://www.gonsie.com/blorg/feed.xml
+   https://www.sligocki.com/feed.xml
+
+   ;; Still other
+   https://www.scottaaronson.com/blog/?feed=rss2
    ))
 
 (use-package engine-mode
