@@ -96,6 +96,18 @@
   (add-hook 'dired-mode-hook #'auto-revert-mode)
   (add-hook 'dired-mode-hook #'dired-omit-mode)
 
+  (add-to-list
+   'dired-guess-shell-alist-default
+   '("\\.aup\\'" "audacity"))
+
+  (add-to-list
+   'dired-guess-shell-alist-default
+   '("\\.mp4\\'" "vlc"))
+
+  (add-to-list
+   'dired-guess-shell-alist-default
+   '("\\.mkv\\'" "vlc"))
+
   (setq dired-omit-verbose nil)
 
   (defkey (C-x C-d) dired-jump))
