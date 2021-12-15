@@ -78,8 +78,9 @@
 
 (use-package compile
   :config
-  (setq
-   compilation-scroll-output t))
+  (setq compilation-scroll-output t)
+  (defkeys-in-map compilation-mode-map
+    C-o ace-window))
 
 (use-package conf-mode
   :config (add-hook 'conf-mode-hook
