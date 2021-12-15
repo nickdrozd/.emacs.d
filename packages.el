@@ -60,6 +60,10 @@
   :delight beacon-mode
   :config (beacon-mode))
 
+(use-package cc-mode
+  :config
+  (c-set-offset 'case-label '+))
+
 (use-package csv-mode
   :ensure t
   :config
