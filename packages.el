@@ -251,7 +251,7 @@
   :pin melpa
   :ensure t
   :config
-  ;; (setq idris-interpreter-path "~/.cabal/bin/idris")
+  (setq idris-interpreter-path "idris2")
   (add-to-list 'completion-ignored-extensions ".ibc")
   (add-to-list 'dired-omit-extensions ".ibc")
 
